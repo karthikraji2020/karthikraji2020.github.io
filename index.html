@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+  body {
+      position: relative; 
+    
+         background-image: url(images/bg.jpg);
+         background-position:fixed;
+         height: 500px;
+         width: 100%;
+         margin: 0 auto;
+            background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+  #section1 {padding-top:60px;height:750px;color: #fff; 
+background-image: url(images/dev.jpg);
+ 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+margin-top: 40px;
+
+  }
+  #section2 {padding-top:50px;height:750px;color: #fff; background-color: rgba(235, 47, 6,.85);}
+  #section3 {padding-top:50px;height:800px;color: #fff; background-color: rgba(0,0,0,.567);}
+  #section4 {padding-top:50px;height:1250px;color: #fff; }
+  #section5 {padding-top:50px;height:850px;color: #fff; background-color: #000023; } 
+
+
+
+.navbar-inverse {
+    background-color: #000023;
+    border-color: #080808;
+}
+.navbar-nav {
+    float: right;
+    margin: 0;
+  font-family: 'Oswald';
+}
+.col-md-5{
+
+}
+ footer h3 a{
+  color: white;
+  padding: 15px;
+  font-size: 25px;
+  border-radius: 50%;
+  border:1px solid white;
+
+
+}
+
+
+#f:hover{
+  
+  background-color: white;
+    color: #3b5998;
+}
+#t:hover{
+  background-color: white;
+    color:#1da1f2;
+}#i:hover{
+  background-color: white ;
+    color:#c32aa2;
+}#g:hover{
+  background-color:white;
+    color:  #db4437;
+}
+#l:hover{
+  background-color:white;
+    color:  #0077b5;
+}
+
+.social{
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+#section4 a{
+    margin: 25px;
+  }
+  #section4 img:hover{
+    transform: rotateY(-360deg);
+    transition: .8s;
+  }
+#section4 .p:hover{
+   transform: rotateY(360deg) scale(1.5) !important;
+    transition: .8s;
+  }
+
+  .thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: rgba(0,0,0,0.2568);
+    border: 1px solid rgba(0,0,0,0.2568);
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.btn-info {
+    color: #fff;
+    background-color: #101010;
+    border-color: #fff ;
+}
+.btn btn-info btn-md :hover{
+    color: #fff;
+    background-color: rgba(0,0,0,0.2568);
+    border-color: #fff ;
+}
+h1{
+  padding: 8px;
+  border:8px solid white;
+  width: 30%;
+  background-color: gray;
+  margin:15px auto;
+text-align: center; 
+font-family: verdana;
+text-transform: capitalize;
+
+
+}
+
+.name{
+  font-family: agenda;
+  font-weight: bolder;float: left;
+  padding: 40px;
+  color: white;width: 400px;
+  margin-top: 400px;
+  margin-left: 150px;
+
+}
+.name h3{
+  text-shadow: 6px 6px 3px rgba(27, 20, 100,1);
+  font-weight: bold;
+  font-size: 62px;
+
+  
+
+}
+.name h6{
+  font-weight: bold;
+  font-size: 42px;
+  color: rgba(255, 195, 18,1.0);
+
+  text-shadow: 6px 6px 3px rgba(27, 20, 100,1);
+  
+}
+.info {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 450px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.376);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.info:hover .overlay {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.text {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -10%);
+  text-align: center;
+  font-weight: bolder;
+}
+table, th, td {
+    border-collapse: collapse;
+
+}
+th, td {
+    padding: 5px;
+    text-align: left;  
+   
+}
+
+  #span span{
+    padding: 22px;
+    border-radius: 50%;
+    background-color: white;
+    border:2px solid red;
+    font-size: 30px;
+  
+  }
+    @keyframes button {
+      0%   {box-shadow: 2px 4px  10px red;
+        background-color: red;
+      }
+    25%  {box-shadow: 2px 4px 20px yellow;background-color: red;}
+    35%  {box-shadow: 2px 4px 25px orange;background-color: orange;}
+
+    50%  {box-shadow: 2px 4px 30px blue;background-color: blue;}
+    75%  {box-shadow: 2px 4px 35px black;background-color: white;}
+    85%  {box-shadow: 2px 4px 40px white;background-color: white;}
+
+    100% {box-shadow: 0px 4px 45px green;background-color: green;}
+
+         }
+         #top{
+          position: fixed;
+          left: 0%;
+          top: 50%;
+          background-color: black;
+          height: 80px;
+          width: 80px;
+          border-radius: 50%;
+         }
+         .note {
+        font-family: agenda;
+  font-weight: bolder;
+  float: right; font-size: 19px;
+  width: 500px;padding: 22px;margin-right: 30px;
+  text-transform: capitalize;background-color: rgba(27, 20, 100,.60);border-radius: 23px;
+  color: white;
+         }
+         .note p{
+         
+          line-height: 31px;letter-spacing: 1.5px;word-spacing: 5px;
+         }
+         .note  h2{font-family: sans-serif;font-weight: bold;color: rgba(255, 195, 18,1.0);
+          border-bottom: 2px solid white;
+     } #section5:hover{
+     transform: none;
+     }
+     .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #ececf1;
+    background-color: #ff0f0f;
+    font-weight: bolder;
+}
+         .align{
+          width: 99%;
+
+         }
+     </style>
+ 
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<div class="align">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="font-family:verdana;font-weight: bolder;padding: 14px 4px 4px 4px;"><span style="border:2.4px solid white;padding: 8px 10px 5px 10px; ">DEVCOMM</span></a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" style="font-family: 'Oleo Script', cursive;">
+          <li><a href="#section1">Home</a></li>
+          <li><a href="#section2">About Me</a></li>
+          <li><a href="#section3">My skills</a></li>
+          <li><a href="#section4">My project</a></li>
+          <li><a href="#section5">Contact</a></li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <div class="row">
+    <div class="name">
+      <h3>karthik</h3>
+    <h6>web developer</h6>
+      
+    </div>
+    <div class="note">
+      <p>  <h2>Career Objective</h2>
+       A self-motivated IT professional with huge knowledge and proficiency in JavaScript, HTML , CSS, and mobile responsive web development, as well as strong skills and ability in writing clean and efficient code, seeks the position of Front-End Web Developer 
+      </p>
+      
+    </div>
+
+
+
+  </div>
+ 
+  
+</div>
+    <br><br><br><br>
+<div id="section2" class="container-fluid">
+       <div class="row">
+     <h1 style="text-align: center; font-family: verdana;">about me</h1>
+     <div class="row"></div>
+     <div class="col-md-1"></div>
+     <div class="col-md-5">
+      <div class="row">
+         <div class="info">
+              <img src="images/bg.jpg" alt="Avatar" class="image">
+
+                    <div class="overlay" >
+                        <table style="width:100%; margin: 80px 0px 0px 150px;">
+                          <tr>
+                                  <th>Name:</th>
+                                  <td>Karthik</td>
+                                    <br>
+                          </tr>
+
+                          <tr>
+                                  <th >D.O.B:</th>
+                                  <td>16-06-1997</td>
+                          </tr>
+                            <tr>
+                                  <th >JOB:</th>
+                                  <td>Web Designer</td>
+                          </tr>
+                            <tr>
+                                  <th >EXPERIENCE:</th>
+                                  <td>1+ months</td>
+                          </tr>
+                            <tr>
+                                  <th >ADDRESS:</th>
+                                  <td>chennai, tamilnadu</td>
+                          </tr>
+                            <tr>
+                                  <th >E-MAIL:</th>
+                                  <td>karthikoneplus@gmail.com</td>
+                          </tr>
+                          
+                            <tr>
+                                  <th >WEBSITE:</th>
+                                  <td>devkarthik.com</td>
+                          </tr>
+                          
+                          
+                          
+                     </table>
+                                             </div>
+                                             
+       
+         </div>
+       </div>
+     </div>
+     <div class="col-md-5" >
+              <p style="letter-spacing: 1px;word-spacing: 3px; ">
+       <h3>Web Designer : +4 months Of Coding Experience</h3>
+  In voluptate velit esse
+         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       </p><br>
+
+       <p C
+         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       
+       </p>
+<br>
+       
+     </div>
+     <div class="row">
+         <div class="col-md-5" style="border-bottom: 1px dotted white;">
+              <p style="letter-spacing: 1px;word-spacing: 3px; ">
+       
+         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   
+         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       
+       </p>
+
+       
+     </div>
+     </div>
+
+
+     <div class="col-md-1"></div>
+
+  </div>
+</div>
+    <br><br><br><br>
+<div id="section3" class="container-fluid">
+ <div class="row">
+     <h1 style="text-align: center; font-family: verdana;">my skills</h1>
+<br><br>
+
+     <div class="col-md-1"></div>
+     <div class="col-md-5" >
+        <div class="row">
+              <h2 style="text-transform: capitalize;padding: 12px ; text-align: center;font-size: 42px;">
+                <u>technical skills</u></h2>
+              <div class="col-md-3" id="html">
+                   <h4 >HTML</h4>
+              </div>
+         
+               <div class="col-md-9">
+                   
+              
+                           <div class="progress " style="height: 30px;">
+                              <div class="progress-bar progress-bar-warning progress-bar-striped active"  aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%; background-color: #ff0f0f; ">
+                               <b>92%</b>
+                              </div>
+                           </div>
+             </div>
+        </div>
+
+           <br><br> <br><br>
+                 <div class="row">
+              <div class="col-md-3">
+                   <h4 >CSS</h4>
+              </div>
+         
+               <div class="col-md-9">
+                   
+              
+                           <div class="progress " style="height: 30px;">
+                              <div class="progress-bar progress-bar-danger progress-bar-striped active"  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%; background-color: #ff0f0f;">85%
+                              </div>
+                           </div>
+             </div>
+        </div> 
+ <br><br> <br><br>
+                 <div class="row">
+              <div class="col-md-3">
+                   <h4 >BOOTSTRAP</h4>
+              </div>
+         
+               <div class="col-md-9">
+                   
+              
+                           <div class="progress " style="height: 30px;">
+                              <div class="progress-bar progress-bar-striped active"  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%; background-color: #ff0f0f;">65%
+                              </div>
+                           </div>
+             </div>
+        </div>
+        </div><div class="col-md-5" style="margin: 0 auto; ">
+       <div class="row">
+        <h2 style="text-transform: capitalize;padding: 12px ; text-align: center;margin-right:130px;font-size: 42px;">
+                <u >my hobbies</u></h2>
+         
+       </div>
+       <div class="row" id="span">
+        <div class="col-md-2">
+         
+        </div>
+        <div class="col-md-4">
+            <span class="fa fa-codepen" style="color:#00a8ff; border:2px solid  #00a8ff; "></span>
+
+          <h2 style="color: #00a8ff">Coding</h2>
+        </div>
+          <div class="col-md-5">
+         
+         <span class="fa fa-camera" style="color:#4cd137; border:2px solid  #4cd137;" ></span>
+
+          <h2 style="color: #4cd137">Photography</h2>
+        </div>
+          <div class="col-md-2">
+         
+        </div>
+      </div>
+      <div class="row" id="span">
+          <div class="col-md-2">
+         
+        </div>
+        <div class="col-md-4" >
+         <span class="fa fa-plane" style="color:#EA2027;border:2px solid #EA2027 ;"></span>
+
+<h2 style="color:#EA2027;"> Travelling</h2>
+        </div>
+          <div class="col-md-4">
+         <span class="fa fa-headphones" style="color: #FFC312;   border:2px solid #FFC312;">  
+        </span>
+<h2 style="color:#FFC312;"> Music</h2>
+        </div>
+          <div class="col-md-2">
+         
+        </div>
+        </div>
+
+
+
+
+
+
+
+     </div>
+     <div class="col-md-1"></div>
+                <br><Br><br><br>
+     </div>
+     
+
+  </div>
+
+<br><br><br><br>
+    <div id="section4" class="container-fluid">
+
+  <div class="Container">
+     <h1 style="text-align: center; font-family: verdana;   ">My projects</h1>
+    
+    <div class="row" >
+        <div class="col-md-2">
+           
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="../task 2/fb.html" target="_blank">
+                    <img src="../task 2/facebook.png" class="thumbnail" style="height:178px; width:300px;">
+                   <center> <p class="btn btn-info btn-md" >Facebook</p></center>
+                 
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="../task 4/Google.png" target="_blank">
+                    <img src="../task 4/Google.png" class="thumbnail" style="height:178px; width:300px;">
+                   <center> <p class="btn btn-info btn-md" >Google</p></center>
+                   
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-2">
+            
+        </div>
+        
+        
+        
+    </div>
+     <div class="row" >
+        <div class="col-md-2">
+            
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="../task 3/index.html" target="_blank">
+                    <img src="../task 3/1.png" class="thumbnail" style="height:178px; width:300px;">
+                   <center> <p class="btn btn-info btn-md" >task 3</p></center>
+                 
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="images/1.jpg" target="_blank">
+                    <img src="images/1.jpg" class="thumbnail">
+                   <center> <p class="btn btn-info btn-md" >image3</p></center>
+                   
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-2">
+           
+        </div>
+
+
+     </div>
+      <div class="row" >
+        <div class="col-md-2">
+           
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="images/5.jpg" target="_blank">
+                    <img src="images/5.jpg" class="thumbnail" style="height:178px; width:300px;">
+                   <center> <p class="btn btn-info btn-md" >image2</p></center>
+                 
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="images/3.jpg" target="_blank">
+                    <img src="images/3.jpg" class="thumbnail">
+                   <center> <p class="btn btn-info btn-md" >image3</p></center>
+                   
+                </a>
+                
+            </div>
+        </div>
+         <div class="col-md-2">
+       
+        </div>
+
+
+ 
+</div>
+<br><br><br><br>
+<div id="section5" class="container-fluid">
+  <div class="row" >
+      <h1 style="text-align: center; font-family: verdana;">Contact</h1>
+      <div class="col-md-1">
+  
+</div>
+      <div class="col-md-5" >
+     
+                    <form >
+                         <div class="row" >
+                          <div class="input-group"  >
+                             
+                        <span class="input-group-addon" style="height: 70px;  background:black; color:white; border:2px solid white; "><i class="glyphicon glyphicon-user"></i></span>
+                    
+                              
+                              <input type="text" name="" required="" placeholder="Enter your name " style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white; 
+                              border-left: none; font-size: 15px;letter-spacing: .7px;">
+                              
+                          </div>
+                         </div>
+                         <br><br>
+
+                         <div class="row">
+                         <div class="input-group">
+                             
+                          <span class="input-group-addon" style="height: 70px;  background:black; color:white; border: 2px solid white;  "><i class="glyphicon glyphicon-lock"></i></span>
+                    
+                              
+                              <input type="text" name="" required="" placeholder="Enter your password" style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white;  border-left:none;font-size: 15px;letter-spacing: .7px; ">
+                              
+                         </div>
+                         </div>
+                         <br><br>
+
+
+                           <div class="row" >
+                          <div class="input-group"  >
+                             
+                        <span class="input-group-addon" style="height: 70px;  background:black; color:white; border:2px solid white; "><i class="fa fa-phone "></i> </span>
+                    
+                              
+                              <input type="text" name="" required="" placeholder="Phone number " style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white; 
+                              border-left: none; font-size: 15px;letter-spacing: .7px;">
+                              
+                          </div>
+                         </div>
+                             <br><br>
+
+                         <div class="row">
+                    
+                              
+                          <textarea type="text" class="input-group" placeholder=" message" style="height: 140px; width: 100%;  background:black; color:white; border: 2px solid white; font-size: 15px;letter-spacing: .7px; word-spacing: 3px; padding: 6px;  ">
+                              </textarea>
+                              
+                         
+                         </div>
+                          <br><br><br>
+                         <div class="row">
+                       <button type="submit" class="btn btn-block" style="background-color: white; color:black;">send message</button>
+                           
+                         </div>
+
+
+                         
+                    </form>
+      </div>
+
+         <div class="col-md-5" id="details"style="padding-left: 20px;">
+          <h2 style="text-transform: capitalize;">contact me for more details</h2>
+          <p style="word-spacing: 5px; letter-spacing: 1px ; font-size: 17px; transform: none;text-transform: capitalize;">
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitationur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p><br><br>
+            <div class="details" style="font-size: 22px; line-height: 42px;transform: none;">
+           <p> <span><i class="fa fa-phone "></i></span> +91- 99628 11722</p>
+           <p style="color: blue;"> <span> <i class="fa fa-envelope"></i></span> mail@example.com</p>
+           <p> <span><i class="fa fa-map-marker" aria-hidden="true"></i></span> kattupakam ,chennai,tamilnadu</p>
+           <p> <span><i class="fa fa-twitter"></i></span> twitter/@my_website</p>
+           <p> <span><i class="fa fa-instagram"></i></span> instagram/@my_website</p>
+
+              </div>
+
+      </div>
+      <div class="col-md-1">
+  
+       </div>
+      
+  </div>
+
+<br><br>
+<a href="#section1" id="top"><button style="height: 45px; width: 45px;background-color: #FFC312; margin-left: 18px;margin-top: 18px; border-radius: 50%;border:none;animation: button 5s linear 1s infinite alternate; "><i class="fa fa-angle-double-up" style="color: black; font-size: 35px;"></i></button></a>
+<br><br>
+<footer class="social">
+  <div class="row"  style="padding-top:20px;">
+
+
+<div class="col-md-1">
+
+</div>
+    <div class="col-md-4">
+      
+      <h2 style="text-transform: capitalize;">thanks for watching my website</h2>
+    </div>
+    <div class="col-md-7">
+
+    <h3 >connect with me: 
+
+        <a href="https://www.facebook.com/"  target="_blank" id="f">
+                <i class="fa fa-facebook-square"></i></a>
+               <a href="https://twitter.com/login?lang=en"  target="_blank" id="t">
+                <i class="fa fa-twitter-square"></i></a>
+               <a href="https://www.instagram.com/"  target="_blank" id="i">
+                <i class="fa fa-instagram"></i></a>
+               <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"  target="_blank" id="g"><i class="fa fa-google-plus"></i></a>
+
+               <a href="https://www.linkedin.com/uas/login"  target="_blank" id="l">
+                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+ </h3>
+    </div>
+
+  </div>
+</footer>
+</div>
+  </div>
+</body>
+</html>
