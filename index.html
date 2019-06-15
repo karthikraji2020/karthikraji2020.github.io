@@ -1,761 +1,1820 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script>
-    alert("website is on the reconstruction process will reupload within 8 hrs");
-</script>
-  
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
 
     <style>
-  body {
-      position: relative; 
+        *.nav {
+            position: fixed;
+        }
+
+        .typewriter {
+            font-family: Courier, monospace;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-70%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: black;
+        }
+
+        .typewriter span {
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            letter-spacing: 2px;
+            animation: typing 5s steps(30, end) infinite, blink .75s step-end infinite;
+            white-space: nowrap;
+            font-size: 30px;
+            font-weight: 700;
+            /* border-right: 4px solid orange; */
+            box-sizing: border-box;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0%
+            }
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink {
+            from,
+            to {
+                border-color: transparent
+            }
+            50% {
+                border-color: orange;
+            }
+        }
+
+        #Home {
+            height: 100vh;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        #Home>img {
+            width: 100%;
+        }
+
+        #About {
+            height: 100vh;
+            background-color: #fff;
+            position: relative;
+        }
+
+        #Portfolio {
+            height: 100vh;
+        }
+
+        #Contact {
+            height: 100vh;
+        }
+
+        /*  DEMO STYLE
+*/
+
+        @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fafafa;
+            position: relative;
+
+        }
+
+        ul li .nav-pills .nav-link {
+            padding: 20px !important;
+
+            font-size: 1.1em !important;
+            line-height: 20px !important;
+            display: block !important;
+            border-radius: .25rem !important;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #fff !important;
+            background: #1b1f30 !important;
+            padding-right: 160px !important;
+            border-right: 10px solid #fff !important;
+
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1.7em;
+            color: #999;
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .navbar {
+            padding: 15px 10px;
+            background: #fff;
+            border: none;
+            border-radius: 0;
+            margin-bottom: 40px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-btn {
+            box-shadow: none;
+            outline: none !important;
+            border: none;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed #ddd;
+            margin: 40px 0;
+        }
+
+        /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 999;
+            background: #000000;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #434343, #000000);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #434343, #000000);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #000000;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #434343, #000000);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #434343, #000000);
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #101a1f;
+        }
+
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+
+        webkit::-webkit-scrollbar {
+            background: -webkit-linear-gradient(to left, #434343, #000000);
+        }
+
+        #sidebar ul li a {
+            padding: 20px;
+            font-size: 1.1em;
+            line-height: 20px;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            padding-right: 30px !important;
+            border-right: 10px solid #7386D5;
+        }
+
+        #sidebar ul li.active>a,
+        a[aria-expanded="true"] {
+            color: #fff;
+
+            background: #6d7fcc;
+            border-right: 10px solid #fff;
+
+        }
+
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+
+        .dropdown-toggle::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
+        }
+
+
+
+        a.download {
+            background: #fff;
+            color: #7386D5;
+        }
+
+        a.article,
+        a.article:hover {
+            background: #6d7fcc !important;
+            color: #fff !important;
+        }
+
+        /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+        #content {
+            width: calc(100% - 250px);
+            /* padding: 40px; */
+            min-height: 100vh;
+            transition: all 0.3s;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #content.active {
+            width: 100%;
+        }
+
+        /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+        @media (max-width: 768px) {
+            #sidebar {
+                margin-left: -250px;
+            }
+            #sidebar.active {
+                margin-left: 0;
+            }
+            #content {
+                width: 100%;
+            }
+            #content.active {
+                width: calc(100% - 250px);
+            }
+            #sidebarCollapse span {
+                display: none;
+            }
+        }
+
+        /* <!-- 
     
-/*          background-image: url(images/bg.jpg); */
-         background-position:fixed;
-         height: 500px;
-         width: 100%;
-         margin: 0 auto;
-            background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-  }
-  #section1 {padding-top:60px;height:750px;color: #fff; 
-/* background-image: url(images/dev.jpg); */
- 
+    
+    --> */
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-margin-top: 40px;
+        .demo_tm_title_holder {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            text-align: left;
+            padding-bottom: 100px;
+            position: relative;
 
-  }
-  #section2 {padding-top:50px;height:750px;color: #fff; background-color: rgba(235, 47, 6,.85);}
-  #section3 {padding-top:50px;height:800px;color: #fff; background-color: rgba(0,0,0,.567);}
-  #section4 {padding-top:50px;height:1250px;color: #fff; }
-  #section5 {padding-top:50px;height:850px;color: #fff; background-color: #000023; } 
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_title_holder.contact {
+            padding-bottom: 93px;
+        }
+
+        .demo_tm_title_holder:before {
+            position: absolute;
+            content: "";
+            width: 6px;
+            height: 72px;
+            background-color: #434343;
+            top: 2px;
+        }
+
+        .demo_tm_title_holder h3 {
+            font-size: 50px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: -.5px;
+            padding-left: 25px;
+            line-height: 1;
+            /*	font-style: italic;*/
+        }
+
+        .demo_tm_title_holder span {
+            font-size: 16px;
+            font-family: "Montserrat";
+            padding-left: 25px;
+        }
+
+        .demo_tm_about_wrapper_all {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            background-color: #fff;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_main_title_holder {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            text-align: left;
+            margin-bottom: 120px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_main_title_holder.about {
+            text-align: left;
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+
+        .demo_tm_main_title_holder h3 {
+            font-weight: 900;
+            font-family: "Montserrat";
+            color: #0000;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .demo_tm_main_title_holder h3 span {
+            position: relative;
+        }
+
+        .demo_tm_main_title_holder h3 span:before {
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 4px;
+            background-color: #0000;
+            letter-spacing: 0px;
+            bottom: -10px;
+        }
+
+        .demo_tm_about_wrapper_all {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            background-color: #fff;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_main_title_holder {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            text-align: left;
+            margin-bottom: 120px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_main_title_holder.about {
+            text-align: left;
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+
+        .demo_tm_main_title_holder h3 {
+            font-weight: 900;
+            font-family: "Montserrat";
+            color: #0000;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .demo_tm_main_title_holder h3 span {
+            position: relative;
+        }
+
+        .demo_tm_main_title_holder h3 span:before {
+            position: absolute;
+            content: "";
+            width: 50px;
+            height: 4px;
+            background-color: #0000;
+            letter-spacing: 0px;
+            bottom: -10px;
+        }
+
+        .demo_tm_about_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            padding-bottom: 122px;
+            position: relative;
+            margin-top: -6px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .author_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .leftbox img {
+            width: 35%;
+            float: left;
+            height: auto;
+            padding-right: 40px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .leftbox .about_image_wrap {
+            position: relative;
+        }
+
+        .demo_tm_about_wrap .leftbox .about_image_wrap .image {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .demo_tm_about_wrap .leftbox .about_image_wrap .image .inner {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .demo_tm_about_wrap .leftbox .about_image_wrap .border .inner {
+            position: absolute;
+            top: 25px !important;
+            bottom: -25px !important;
+            left: 25px !important;
+            right: -25px !important;
+            border: 10px solid #0000;
+        }
+
+        .demo_tm_about_wrap .leftbox .about_image_wrap img {
+            opacity: 0;
+        }
+
+        .demo_tm_about_wrap .rightbox {
+            width: 65%;
+            float: right;
+            padding: 0px 0px 0px 65px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .subtitle {
+            width: 100%;
+            float: left;
+            margin-bottom: 20px;
+        }
+
+        .demo_tm_about_wrap .subtitle p {
+            font-family: "Montserrat";
+            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .demo_tm_about_wrap .definition {
+            margin-bottom: 15px;
+        }
+
+        .demo_tm_about_wrap .definition p {
+            color: #333;
+        }
+
+        .demo_tm_about_wrap .definition p strong {
+            color: #434343;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            margin-bottom: 13px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .demo_tm_main_title_holder {
+            margin-bottom: 40px;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap ul {
+            margin: 0px;
+            list-style-type: none;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap ul li {
+            margin: 0px 0px 10px 0px;
+            width: 50%;
+            float: left;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap ul li:nth-of-type(2n) {
+            clear: right;
+        }
+
+        .about_short_contact_wrap ul li label {
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 13px;
+            color: #000;
+            min-width: 85px;
+            display: inline-block;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap ul li a {
+            text-decoration: none;
+            color: #000;
+            position: relative;
+
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        .demo_tm_about_wrap .about_short_contact_wrap ul li a:hover {
+            color: #BD0A0D;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul {
+            margin: 0px;
+            list-style-type: none;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li {
+            margin: 0px 30px 10px 0px;
+            float: left;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li:last-child {
+            margin-right: 0px;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li a span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #434343;
+            font-weight: 600;
+            font-family: "Montserrat";
+            padding: 12px 35px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            ;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li a:before {
+            position: absolute;
+            content: "";
+            top: 0px;
+            height: 100%;
+            left: -25%;
+            width: 0%;
+            background-color: #0000;
+            transform: skew(50deg);
+            transition-duration: .6s;
+            z-index: 1;
+        }
+
+        .demo_tm_about_wrap .buttons_wrap ul li a:hover:before {
+            width: 180%;
+        }
+
+        .demo_tm_skills_wrap,
+        .demo_tm_skills_wrap .inner_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_skills_wrap {
+            background-color: #f6f7fd;
+            padding: 90px 0px;
+            margin-bottom: 100px;
+        }
+
+        .demo_tm_skills_wrap .inner_wrap {
+            display: flex;
+        }
+
+        .demo_tm_skills_wrap .leftbox {
+            width: 35%;
+            height: auto;
+            clear: both;
+            float: left;
+            padding-right: 0px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_skills_wrap .rightbox {
+            width: 65%;
+            height: auto;
+            clear: both;
+            float: right;
+            padding-left: 65px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .progress_bar_wrap_total {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            margin-bottom: 10px;
+            position: relative;
+            margin-top: -4px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_progress_wrap[data-size="big"] .demo_tm_progress .demo_tm_bar_bg {
+            height: 40px;
+        }
+
+        .demo_tm_progress_wrap[data-size="small"] .demo_tm_progress .demo_tm_bar_bg {
+            height: 5px;
+        }
+
+        .demo_tm_progress_wrap[data-round="a"] .demo_tm_progress .demo_tm_bar_bg,
+        .demo_tm_progress_wrap[data-round="a"] .demo_tm_progress .demo_tm_bar {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        .demo_tm_progress_wrap[data-round="b"] .demo_tm_progress .demo_tm_bar_bg,
+        .demo_tm_progress_wrap[data-round="b"] .demo_tm_progress .demo_tm_bar {
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .demo_tm_progress_wrap[data-round="c"] .demo_tm_progress .demo_tm_bar_bg,
+        .demo_tm_progress_wrap[data-round="c"] .demo_tm_progress .demo_tm_bar {
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+        }
+
+        .demo_tm_progress {
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .demo_tm_progress:last-child {
+            margin-bottom: 0px;
+        }
+
+        .demo_tm_progress>span {
+            margin: 0px 0px 3px 0px;
+            width: 100%;
+            display: block;
+            text-align: left;
+        }
+
+        .demo_tm_progress span.label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000;
+            font-family: "Montserrat";
+        }
+
+        .demo_tm_progress span.label .experience {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .demo_tm_progress span.number {
+            float: right;
+            font-size: 13px;
+            color: #000;
+            font-weight: 700;
+            font-family: "Montserrat";
+        }
+
+        .demo_tm_progress .demo_tm_bar_bg {
+            background: rgba(0, 0, 0, .1);
+            width: 100%;
+            min-width: 100%;
+            position: relative;
+            height: 20px;
+        }
+
+        .demo_tm_progress .demo_tm_bar_bg .demo_tm_bar_wrap {
+            width: 0px;
+            height: 100%;
+        }
+
+        .demo_tm_progress .demo_tm_bar_bg .demo_tm_bar_wrap.open {
+            -webkit-animation: demo_tm_expand 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            /* Safari 4+ */
+            -moz-animation: demo_tm_expand 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            /* Fx 5+ */
+            animation: demo_tm_expand 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            /* IE 10+ */
+            width: 100%;
+        }
+
+        .demo_tm_progress .demo_tm_bar_bg .demo_tm_bar {
+            height: 100%;
+            background: #333;
+            width: 0px;
+            overflow: hidden;
+        }
+
+        .demo_tm_progress_wrap[data-strip="on"] .demo_tm_progress .demo_tm_bar {
+            background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+
+            -webkit-animation: demo_tm_bar_move 4s linear infinite;
+            -moz-animation: demo_tm_bar_move 4s linear infinite;
+            animation: demo_tm_bar_move 4s linear infinite;
+            background-size: 50px 50px;
+        }
+
+        @-webkit-keyframes demo_tm_bar_move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        @-moz-keyframes demo_tm_bar_move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        @keyframes demo_tm_bar_move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        /*expand width animation*/
+
+        @-webkit-keyframes demo_tm_expand {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @-moz-keyframes demo_tm_expand {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes demo_tm_expand {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        .demo_tm_mini_title_holder {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_mini_title_holder h4 {
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .demo_tm_mini_title_holder.contact h4 {
+            margin-bottom: 30px;
+        }
+
+        /*---------------------------------------------------*/
+
+        /*	06) demo PORTFOLIO
+/*---------------------------------------------------*/
+
+        .demo_tm_title_holder.portfolio {
+            padding-bottom: 90px;
+        }
+
+        .demo_tm_portfolio_wrapper_all {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            padding-bottom: 70px;
+            background-color: #fff;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_portfolio_wrapper_all .demo_tm_button {
+            text-align: center;
+        }
+
+        .demo_tm_portfolio_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_portfolio_filter {
+            width: 100%;
+            height: auto;
+            text-align: left;
+            list-style-type: none;
+            margin: 0px 0px 13px 0px;
+            display: inline-block;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_portfolio_filter li {
+            display: inline-block;
+            margin: 0px 40px 0px 0px;
+        }
+
+        .demo_tm_portfolio_filter li:last-child {
+            margin-right: 0px;
+        }
+
+        .demo_tm_portfolio_filter li a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            display: inline-block;
+            margin-bottom: 10px;
+            position: relative;
+
+            -webkit-transition: all .1s ease;
+            -moz-transition: all .1s ease;
+            -ms-transition: all .1s ease;
+            -o-transition: all .1s ease;
+            transition: all .1s ease;
+        }
+
+        .demo_tm_portfolio_filter li a.current {
+            color: #BD0A0D;
+        }
+
+        /* PORTFOLIO LIST */
+
+        .demo_tm_portfolio_list {
+            list-style-type: none;
+            margin: 0px 0px 0px -30px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_portfolio_list>li {
+            width: 33.3333%;
+            float: left;
+            position: relative;
+            margin: 0px 0px 30px 0px;
+            padding-left: 30px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_portfolio_list li img {
+            min-width: 100%;
+        }
+
+        .demo_tm_portfolio_titles {
+            white-space: nowrap;
+            background: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 5px 15px;
+            color: #000000;
+            position: fixed;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .demo_tm_portfolio_titles.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .demo_tm_portfolio_titles .work__cat {
+            position: absolute;
+            background: #ffffff;
+            top: 100%;
+            left: 0;
+            margin-top: -5px;
+            font-family: "Montserrat";
+            font-size: 12px;
+            font-weight: 400;
+            padding: 5px 15px;
+        }
+
+        .entry {
+            position: relative;
+        }
+
+        .demo_tm_portfolio_image_main {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 
 
+        /*---------------------------------------------------*/
 
-.navbar-inverse {
-    background-color: #000023;
-    border-color: #080808;
-}
-.navbar-nav {
-    float: right;
-    margin: 0;
-  font-family: 'Oswald';
-}
-.col-md-5{
+        /*	09) demo CONTACT
+/*---------------------------------------------------*/
 
-}
- footer h3 a{
-  color: white;
-  padding: 15px;
-  font-size: 25px;
-  border-radius: 50%;
-  border:1px solid white;
+        .demo_tm_contact_wrap_all {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            background-color: #fff;
 
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-}
+        .demo_tm_contact_wrap_all .leftbox {
+            width: 40%;
+            height: auto;
+            float: left;
+            padding-right: 40px;
 
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-#f:hover{
-  
-  background-color: white;
-    color: #3b5998;
-}
-#t:hover{
-  background-color: white;
-    color:#1da1f2;
-}#i:hover{
-  background-color: white ;
-    color:#c32aa2;
-}#g:hover{
-  background-color:white;
-    color:  #db4437;
-}
-#l:hover{
-  background-color:white;
-    color:  #0077b5;
-}
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
 
-.social{
-  background-color: black;
-  height: 100px;
-  width: 100%;
-}
-#section4 a{
-    margin: 25px;
-  }
-  #section4 img:hover{
-    transform: rotateY(-360deg);
-    transition: .8s;
-  }
-#section4 .p:hover{
-   transform: rotateY(360deg) scale(1.5) !important;
-    transition: .8s;
-  }
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-  .thumbnail {
-    display: block;
-    padding: 4px;
-    margin-bottom: 20px;
-    line-height: 1.42857143;
-    background-color: rgba(0,0,0,0.2568);
-    border: 1px solid rgba(0,0,0,0.2568);
-    border-radius: 4px;
-    -webkit-transition: border .2s ease-in-out;
-    -o-transition: border .2s ease-in-out;
-    transition: border .2s ease-in-out;
-}
-.btn-info {
-    color: #fff;
-    background-color: #101010;
-    border-color: #fff ;
-}
-.btn btn-info btn-md :hover{
-    color: #fff;
-    background-color: rgba(0,0,0,0.2568);
-    border-color: #fff ;
-}
-h1{
-  padding: 8px;
-  border:8px solid white;
-  width: 30%;
-  background-color: gray;
-  margin:15px auto;
-text-align: center; 
-font-family: verdana;
-text-transform: capitalize;
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap ul {
+            margin: 0px;
+            list-style-type: none;
+        }
 
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap ul li {
+            margin: 0px 0px 15px 0px;
+        }
 
-}
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap ul li label {
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 13px;
+            color: #000;
+        }
 
-.name{
-  font-family: agenda;
-  font-weight: bolder;float: left;
-  padding: 40px;
-  color: white;width: 400px;
-  margin-top: 400px;
-  margin-left: 150px;
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap ul li span {
+            padding-left: 5px;
+        }
 
-}
-.name h3{
-  text-shadow: 6px 6px 3px rgba(27, 20, 100,1);
-  font-weight: bold;
-  font-size: 62px;
+        .demo_tm_contact_wrap_all .leftbox .short_info_wrap ul li a {
+            text-decoration: none;
+            color: #000;
+        }
 
-  
+        .demo_tm_contact_wrap_all .rightbox {
+            width: 60%;
+            height: auto;
+            float: right;
 
-}
-.name h6{
-  font-weight: bold;
-  font-size: 42px;
-  color: rgba(255, 195, 18,1.0);
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-  text-shadow: 6px 6px 3px rgba(27, 20, 100,1);
-  
-}
-.info {
-  position: relative;
-  width: 100%;
-}
+        .demo_tm_contact_wrap {
+            max-width: 830px;
+            height: auto;
+            margin: 0px auto;
 
-.image {
-  display: block;
-  width: 100%;
-  height: 450px;
-}
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0,0,0,0.376);
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
+        .demo_tm_contact_wrap .subtitle {
+            text-align: center;
+            margin-bottom: 69px;
+        }
 
-.info:hover .overlay {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
+        .demo_tm_contact_wrap .subtitle p {
+            color: #333;
+        }
 
-.text {
-  color: white;
-  font-size: 25px;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -10%);
-  text-align: center;
-  font-weight: bolder;
-}
-table, th, td {
-    border-collapse: collapse;
+        .demo_tm_contact_wrap .main_input_wrap {
+            margin-bottom: 75px;
+            position: relative;
+            top: -24px;
+        }
 
-}
-th, td {
-    padding: 5px;
-    text-align: left;  
-   
-}
+        .demo_tm_contact_wrap .main_input_wrap,
+        .demo_tm_contact_wrap .main_input_wrap .wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
 
-  #span span{
-    padding: 22px;
-    border-radius: 50%;
-    background-color: white;
-    border:2px solid red;
-    font-size: 30px;
-  
-  }
-    @keyframes button {
-      0%   {box-shadow: 2px 4px  10px red;
-        background-color: red;
-      }
-    25%  {box-shadow: 2px 4px 20px yellow;background-color: red;}
-    35%  {box-shadow: 2px 4px 25px orange;background-color: orange;}
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
 
-    50%  {box-shadow: 2px 4px 30px blue;background-color: blue;}
-    75%  {box-shadow: 2px 4px 35px black;background-color: white;}
-    85%  {box-shadow: 2px 4px 40px white;background-color: white;}
+        .demo_tm_contact_wrap .main_input_wrap .wrap {
+            margin-bottom: 20px;
+        }
 
-    100% {box-shadow: 0px 4px 45px green;background-color: green;}
+        .demo_tm_contact_wrap .main_input_wrap .wrap input {
+            width: 100%;
+            text-align: left;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(10, 4, 37, 1);
+            color: #333;
+            padding-left: 0px !important;
+        }
 
-         }
-         #top{
-          position: fixed;
-          left: 0%;
-          top: 50%;
-          background-color: black;
-          height: 80px;
-          width: 80px;
-          border-radius: 50%;
-         }
-         .note {
-        font-family: agenda;
-  font-weight: bolder;
-  float: right; font-size: 19px;
-  width: 500px;padding: 22px;margin-right: 30px;
-  text-transform: capitalize;background-color: rgba(27, 20, 100,.60);border-radius: 23px;
-  color: white;
-         }
-         .note p{
-         
-          line-height: 31px;letter-spacing: 1.5px;word-spacing: 5px;
-         }
-         .note  h2{font-family: sans-serif;font-weight: bold;color: rgba(255, 195, 18,1.0);
-          border-bottom: 2px solid white;
-     } #section5:hover{
-     transform: none;
-     }
-     .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-    color: #ececf1;
-    background-color: #ff0f0f;
-    font-weight: bolder;
-}
-         .align{
-          width: 99%;
+        .demo_tm_contact_wrap .main_input_wrap .wrap input:focus {
+            outline: none;
+        }
 
-         }
-     </style>
- 
+        .demo_tm_contact_wrap .main_input_wrap .wrap textarea {
+            width: 100%;
+            height: 80px;
+            text-align: left;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(10, 4, 37, 1);
+            color: #333;
+            padding-left: 0px !important;
+        }
+
+        .demo_tm_contact_wrap .main_input_wrap .wrap textarea:focus {
+            outline: none;
+        }
+
+        .demo_tm_contact_wrap .demo_tm_button a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #434343;
+            font-weight: 600;
+            font-family: "Montserrat";
+            padding: 12px 35px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo_tm_contact_wrap .demo_tm_button a:before {
+            position: absolute;
+            content: "";
+            top: 0px;
+            height: 100%;
+            left: -25%;
+            width: 0%;
+            background-color: #0000;
+            transform: skew(50deg);
+            transition-duration: .6s;
+            z-index: 1;
+        }
+
+        .demo_tm_contact_wrap .demo_tm_button a:hover:before {
+            width: 170%;
+        }
+
+        .demo_tm_contact_wrap .demo_tm_button a span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo_tm_contact_wrap .empty_notice {
+            color: #BD0A0D;
+            margin-bottom: 7px;
+            display: none;
+            text-align: left;
+        }
+
+        .demo_tm_contact_wrap .contact_error {
+            color: rgba(255, 0, 4, 1.00);
+            text-align: left;
+        }
+
+        .demo_tm_contact_wrap .returnmessage {
+            color: #0064FF;
+            margin-bottom: 7px;
+            text-align: left;
+        }
+
+        .demo_tm_footer_wrap {
+            width: 100%;
+            height: auto;
+            clear: both;
+            float: left;
+            text-align: left;
+            background-color: #000000;
+            padding: 50px 0px;
+
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            /* Opera/IE 8+ */
+        }
+
+        .demo_tm_footer_wrap p {
+            color: #fff;
+        }
+
+        .demo_tm_footer_wrap p a {
+            text-decoration: none;
+            color: #fff;
+            font-family: "Montserrat";
+            font-weight: 600;
+            position: relative;
+        }
+    </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-<div class="align">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#" style="font-family:verdana;font-weight: bolder;padding: 14px 4px 4px 4px;"><span style="border:2.4px solid white;padding: 8px 10px 5px 10px; ">DEVCOMM</span></a>
-    </div>
-    <div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav" style="font-family: 'Oleo Script', cursive;">
-          <li><a href="#section1">Home</a></li>
-          <li><a href="#section2">About Me</a></li>
-          <li><a href="#section3">My skills</a></li>
-          <li><a href="#section4">My project</a></li>
-          <li><a href="#section5">Contact</a></li>
 
-          
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>    
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
-<div id="section1" class="container-fluid">
-  <div class="row">
-    <div class="name">
-      <h3>karthik</h3>
-    <h6>web developer</h6>
-      
-    </div>
-    <div class="note">
-      <p>  <h2>Career Objective</h2>
-       A self-motivated IT professional with huge knowledge and proficiency in JavaScript, HTML , CSS, and mobile responsive web development, as well as strong skills and ability in writing clean and efficient code, seeks the position of Front-End Web Developer 
-      </p>
-      
-    </div>
-
-
-
-  </div>
- 
-  
-</div>
-    <br><br><br><br>
-<div id="section2" class="container-fluid">
-       <div class="row">
-     <h1 style="text-align: center; font-family: verdana;">about me</h1>
-     <div class="row"></div>
-     <div class="col-md-1"></div>
-     <div class="col-md-5">
-      <div class="row">
-         <div class="info">
-              <img src="images/bg.jpg" alt="Avatar" class="image">
-
-                    <div class="overlay" >
-                        <table style="width:100%; margin: 80px 0px 0px 150px;">
-                          <tr>
-                                  <th>Name:</th>
-                                  <td>Karthik</td>
-                                    <br>
-                          </tr>
-
-                          <tr>
-                                  <th >D.O.B:</th>
-                                  <td>16-06-1997</td>
-                          </tr>
-                            <tr>
-                                  <th >JOB:</th>
-                                  <td>Web Designer</td>
-                          </tr>
-                            <tr>
-                                  <th >EXPERIENCE:</th>
-                                  <td>1+ months</td>
-                          </tr>
-                            <tr>
-                                  <th >ADDRESS:</th>
-                                  <td>chennai, tamilnadu</td>
-                          </tr>
-                            <tr>
-                                  <th >E-MAIL:</th>
-                                  <td>karthikoneplus@gmail.com</td>
-                          </tr>
-                          
-                            <tr>
-                                  <th >WEBSITE:</th>
-                                  <td>devkarthik.com</td>
-                          </tr>
-                          
-                          
-                          
-                     </table>
-                                             </div>
-                                             
-       
-         </div>
-       </div>
-     </div>
-     <div class="col-md-5" >
-              <p style="letter-spacing: 1px;word-spacing: 3px; ">
-       <h3>Web Designer : +4 months Of Coding Experience</h3>
-  In voluptate velit esse
-         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       </p><br>
-
-       <p C
-         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       
-       </p>
-<br>
-       
-     </div>
-     <div class="row">
-         <div class="col-md-5" style="border-bottom: 1px dotted white;">
-              <p style="letter-spacing: 1px;word-spacing: 3px; ">
-       
-         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-   
-         Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       
-       </p>
-
-       
-     </div>
-     </div>
-
-
-     <div class="col-md-1"></div>
-
-  </div>
-</div>
-    <br><br><br><br>
-<div id="section3" class="container-fluid">
- <div class="row">
-     <h1 style="text-align: center; font-family: verdana;">my skills</h1>
-<br><br>
-
-     <div class="col-md-1"></div>
-     <div class="col-md-5" >
+    <div class="wrapper">
         <div class="row">
-              <h2 style="text-transform: capitalize;padding: 12px ; text-align: center;font-size: 42px;">
-                <u>technical skills</u></h2>
-              <div class="col-md-3" id="html">
-                   <h4 >HTML</h4>
-              </div>
-         
-               <div class="col-md-9">
-                   
-              
-                           <div class="progress " style="height: 30px;">
-                              <div class="progress-bar progress-bar-warning progress-bar-striped active"  aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%; background-color: #ff0f0f; ">
-                               <b>92%</b>
-                              </div>
-                           </div>
-             </div>
-        </div>
+            <div id="sidebar">
+                <nav id="myScrollspy">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
 
-           <br><br> <br><br>
-                 <div class="row">
-              <div class="col-md-3">
-                   <h4 >CSS</h4>
-              </div>
-         
-               <div class="col-md-9">
-                   
-              
-                           <div class="progress " style="height: 30px;">
-                              <div class="progress-bar progress-bar-danger progress-bar-striped active"  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%; background-color: #ff0f0f;">85%
-                              </div>
-                           </div>
-             </div>
-        </div> 
- <br><br> <br><br>
-                 <div class="row">
-              <div class="col-md-3">
-                   <h4 >BOOTSTRAP</h4>
-              </div>
-         
-               <div class="col-md-9">
-                   
-              
-                           <div class="progress " style="height: 30px;">
-                              <div class="progress-bar progress-bar-striped active"  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%; background-color: #ff0f0f;">65%
-                              </div>
-                           </div>
-             </div>
-        </div>
-        </div><div class="col-md-5" style="margin: 0 auto; ">
-       <div class="row">
-        <h2 style="text-transform: capitalize;padding: 12px ; text-align: center;margin-right:130px;font-size: 42px;">
-                <u >my hobbies</u></h2>
-         
-       </div>
-       <div class="row" id="span">
-        <div class="col-md-2">
-         
-        </div>
-        <div class="col-md-4">
-            <span class="fa fa-codepen" style="color:#00a8ff; border:2px solid  #00a8ff; "></span>
-
-          <h2 style="color: #00a8ff">Coding</h2>
-        </div>
-          <div class="col-md-5">
-         
-         <span class="fa fa-camera" style="color:#4cd137; border:2px solid  #4cd137;" ></span>
-
-          <h2 style="color: #4cd137">Photography</h2>
-        </div>
-          <div class="col-md-2">
-         
-        </div>
-      </div>
-      <div class="row" id="span">
-          <div class="col-md-2">
-         
-        </div>
-        <div class="col-md-4" >
-         <span class="fa fa-plane" style="color:#EA2027;border:2px solid #EA2027 ;"></span>
-
-<h2 style="color:#EA2027;"> Travelling</h2>
-        </div>
-          <div class="col-md-4">
-         <span class="fa fa-headphones" style="color: #FFC312;   border:2px solid #FFC312;">  
-        </span>
-<h2 style="color:#FFC312;"> Music</h2>
-        </div>
-          <div class="col-md-2">
-         
-        </div>
-        </div>
+                    </div>
+                    <span style="margin:0 40px;display: inline;  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                    filter: grayscale(100%);">
+                        <img src="./img/karthick.jpg" style="height: 100px;width:100px;border-radius:50%;">
+                    </span>
 
 
+                    <ul class="nav nav-pills flex-column">
 
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#Home">HOME </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">ABOUT </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Portfolio">PORTFOLIO </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Contact">CONTACT </a>
+                        </li>
 
+                    </ul>
 
+                </nav>
+            </div>
+            <!--    
+ <div class="col-sm-3 col-4 bg-success"></div> -->
+            <div id="content">
+                <div id="Home">
 
+                    <img src="./img/bg.jpg">
+                    <div class="typewriter">
 
-     </div>
-     <div class="col-md-1"></div>
-                <br><Br><br><br>
-     </div>
-     
+                        <div class="typewriter-text"> I'M karthik ,
+                            <span>Junior SoftWare Developer</span>.</div>
+                    </div>
+                </div>
+                <div id="About">
+                    <!-- ABOUT -->
+                    <div class="demo_tm_section relative" id="about">
+                        <div class="demo_tm_about_wrapper_all">
+                            <div class="container">
+                                <div class="demo_tm_title_holder">
+                                    <h3>About Me</h3>
+                                    <span>Main informations about me</span>
+                                </div>
+                                <div class="demo_tm_about_wrap">
+                                    <div class="author_wrap">
+                                        <div class="leftbox">
+                                            <div>
+                                                <img src="./img/karthick.jpg" style=" width:400px; height:400px; border-radius: 50%;">
+                                            </div>
 
-  </div>
+                                        </div>
+                                        <div class="rightbox">
+                                            <div class="definition">
+                                                <p>Hi! My name is
+                                                    <strong>Karthik Raji</strong>. I am a Junior Software Developer, and I'm very
+                                                    passionate and dedicated to my work. , I have acquired the skills and
+                                                    knowledge necessary to make your project a success. I enjoy every step
+                                                    of the design process, from discussion and collaboration to concept and
+                                                    execution, but I find the most satisfaction in seeing the finished product
+                                                    do everything for you that it was created to do.</p>
+                                            </div>
+                                            <div class="about_short_contact_wrap">
+                                                <ul>
+                                                    <li>
+                                                        <span>
+                                                            <label>Birthday:</label> 16.06.1997</span>
+                                                    </li>
 
-<br><br><br><br>
-    <div id="section4" class="container-fluid">
+                                                    <li>
+                                                        <span>
+                                                            <label>City:</label> CHENNAI,INDIA </span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <label>Interests:</label> cricket</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <label>Degree:</label> BE(ECE)</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <label>College:</label>Sri Venkateswara College Of Engineering</span>
+                                                    </li>
 
-  <div class="Container">
-     <h1 style="text-align: center; font-family: verdana;   ">My projects</h1>
-    
-    <div class="row" >
-        <div class="col-md-2">
-           
-        </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="../task 2/fb.html" target="_blank">
-                    <img src="../task 2/facebook.png" class="thumbnail" style="height:178px; width:300px;">
-                   <center> <p class="btn btn-info btn-md" >Facebook</p></center>
-                 
-                </a>
-                
+                                                    <li>
+                                                        <span>
+                                                            <label>Website:</label>
+                                                            <a href="https://karthikraji2020.github.io">https://karthikraji2020.git.io</a>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <label>Mail:</label>
+                                                            <a href="mailto:karthikraji2020@gmail.com">karthikraji2020@gmail.com</a>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <label>Phone:</label>
+                                                            <a href="">+91 9962811722</a>
+                                                        </span>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="buttons_wrap">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0)">
+                                                            <span>Download CV</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="anchor">
+                                                        <a href="#contact">
+                                                            <span>Send Message</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ABOUT -->
+                </div>
+                <!-- SKILLS -->
+                <div class="demo_tm_section">
+                    <div class="demo_tm_skills_wrap">
+                        <div class="container">
+                            <h3>Skills</h3>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>HTML 5</b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 87%; background-color: #262626; ">
+                                            <b>87%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>CSS 3</b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress ">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 78%; background-color: #262626; ">
+                                            <b>78%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>Bootstrap 3/4</b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress ">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 75%; background-color: #262626; ">
+                                            <b>75%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>Javascript </b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress ">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 72%; background-color: #262626; ">
+                                            <b>72%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>Angular 7</b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress ">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"
+                                            style="width:62%; background-color: #262626; ">
+                                            <b>62%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <b>Ionic 4</b>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="progress ">
+                                        <div class="progress-bar progress-bar-dark progress-bar-striped active" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 57%; background-color: #262626; ">
+                                            <b>57%</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /SKILLS -->
+                <div id="Portfolio">
+                    <!-- PORTFOLIO -->
+                    <div class="demo_tm_section relative" id="portfolio">
+                        <div class="demo_tm_portfolio_wrapper_all">
+                            <!-- PORTFOLIO FILTER -->
+                            <!-- <div class="demo_tm_second_portfolio">
+                                <div class="container">
+                                    <div class="demo_tm_portfolio_wrap">
+                                        <div class="demo_tm_title_holder portfolio">
+                                            <h3>Creative Works</h3>
+                                            <span>Check out our latest creative works</span>
+                                        </div>
+                                        <div class="demo_tm_portfolio_titles"></div>
+                                        <ul class="demo_tm_portfolio_filter">
+                                            <li>
+                                                <a href="#" class="current" data-filter="*">All</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-filter=".design">Design</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-filter=".photography">Photography</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-filter=".development">Development</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="demo_tm_portfolio_list gallery_zoom">
+                                            <li class="design">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Aoc Productions" data-category="Design">
+                                                    <a href="portfolio-single.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/1.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="photography">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Ind Hed" data-category="Photography">
+                                                    <a href="portfolio-single-2.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/2.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="development">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Paper Mockup" data-category="Development">
+                                                    <a href="portfolio-single-3.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/3.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="photography">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="The Nordic" data-category="Photography">
+                                                    <a href="portfolio-single-4.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/4.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="design">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Creatives Castle" data-category="Design">
+                                                    <a href="portfolio-single-5.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/5.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="photography">
+                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="White Bag" data-category="Photography">
+                                                    <a href="portfolio-single-6.html">
+                                                        <img src="img/portfolio/600x600.jpg" alt="" />
+                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/6.jpg"></div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- /PORTFOLIO FILTER -->
+                        </div>
+                    </div>
+                    <!-- /PORTFOLIO -->
+                </div>
+                <div id="Contact">
+                    <!-- CONTACT & FOOTER -->
+                    <div class="demo_tm_section" id="contact">
+                        <div class="container">
+                            <div class="demo_tm_title_holder contact">
+                                <h3>Contact Me</h3>
+                                <span>Get in touch with me</span>
+                            </div>
+                        </div>
+                        <div class="demo_tm_footer_contact_wrapper_all">
+                            <div class="demo_tm_contact_wrap_all">
+                                <div class="container">
+                                    <div class="leftbox">
+                                        <div class="demo_tm_mini_title_holder contact">
+                                            <h4>Get in Touch</h4>
+                                        </div>
+                                        <div class="short_info_wrap">
+                                            <ul>
+                                                <li>
+                                                    <p>
+                                                        <label>Address:</label>
+                                                        <span>East Tambaram ,chennai</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <label>Email:</label>
+                                                        <span>
+                                                            <a href="mailto:karthikraji2020@gmail.com">karthikraji2020@gmail.com</a>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <label>Phone:</label>
+                                                        <span>+77 022 177 05 05</span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <label>Website:</label>
+                                                        <span>
+                                                            <a href="https:karthikraji2020.github.io">https:karthikraji2020github.io</a>
+                                                        </span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="rightbox">
+                                        <div class="demo_tm_contact_wrap">
+                                            <div class="main_input_wrap">
+                                                <form method="post" class="contact_form" id="contact_form">
+                                                    <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+                                                    <div class="empty_notice">
+                                                        <span>Please Fill Required Fields</span>
+                                                    </div>
+                                                    <div class="wrap">
+                                                        <input id="name" type="text" placeholder="Your Name">
+                                                    </div>
+                                                    <div class="wrap">
+                                                        <input id="email" type="text" placeholder="Your Email">
+                                                    </div>
+                                                    <div class="wrap">
+                                                        <textarea id="message" placeholder="Your Message"></textarea>
+                                                    </div>
+                                                    <div class="demo_tm_button">
+                                                        <a id="send_message" href="#">
+                                                            <span>Send Message</span>
+                                                        </a>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="demo_tm_footer_wrap">
+                                <div class="container">
+                                    <p>&copy; Copyright 2019. All Rights are Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /CONTACT & FOOTER -->
+                </div>
+
             </div>
         </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="../task 4/Google.png" target="_blank">
-                    <img src="../task 4/Google.png" class="thumbnail" style="height:178px; width:300px;">
-                   <center> <p class="btn btn-info btn-md" >Google</p></center>
-                   
-                </a>
-                
-            </div>
-        </div>
-         <div class="col-md-2">
-            
-        </div>
-        
-        
-        
     </div>
-     <div class="row" >
-        <div class="col-md-2">
-            
-        </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="../task 3/index.html" target="_blank">
-                    <img src="../task 3/1.png" class="thumbnail" style="height:178px; width:300px;">
-                   <center> <p class="btn btn-info btn-md" >task 3</p></center>
-                 
-                </a>
-                
-            </div>
-        </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="images/1.jpg" target="_blank">
-                    <img src="images/1.jpg" class="thumbnail">
-                   <center> <p class="btn btn-info btn-md" >image3</p></center>
-                   
-                </a>
-                
-            </div>
-        </div>
-         <div class="col-md-2">
-           
-        </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-
-     </div>
-      <div class="row" >
-        <div class="col-md-2">
-           
-        </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="images/5.jpg" target="_blank">
-                    <img src="images/5.jpg" class="thumbnail" style="height:178px; width:300px;">
-                   <center> <p class="btn btn-info btn-md" >image2</p></center>
-                 
-                </a>
-                
-            </div>
-        </div>
-         <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="images/3.jpg" target="_blank">
-                    <img src="images/3.jpg" class="thumbnail">
-                   <center> <p class="btn btn-info btn-md" >image3</p></center>
-                   
-                </a>
-                
-            </div>
-        </div>
-         <div class="col-md-2">
-       
-        </div>
-
-
- 
-</div>
-<br><br><br><br>
-<div id="section5" class="container-fluid">
-  <div class="row" >
-      <h1 style="text-align: center; font-family: verdana;">Contact</h1>
-      <div class="col-md-1">
-  
-</div>
-      <div class="col-md-5" >
-     
-                    <form >
-                         <div class="row" >
-                          <div class="input-group"  >
-                             
-                        <span class="input-group-addon" style="height: 70px;  background:black; color:white; border:2px solid white; "><i class="glyphicon glyphicon-user"></i></span>
-                    
-                              
-                              <input type="text" name="" required="" placeholder="Enter your name " style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white; 
-                              border-left: none; font-size: 15px;letter-spacing: .7px;">
-                              
-                          </div>
-                         </div>
-                         <br><br>
-
-                         <div class="row">
-                         <div class="input-group">
-                             
-                          <span class="input-group-addon" style="height: 70px;  background:black; color:white; border: 2px solid white;  "><i class="glyphicon glyphicon-lock"></i></span>
-                    
-                              
-                              <input type="text" name="" required="" placeholder="Enter your password" style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white;  border-left:none;font-size: 15px;letter-spacing: .7px; ">
-                              
-                         </div>
-                         </div>
-                         <br><br>
-
-
-                           <div class="row" >
-                          <div class="input-group"  >
-                             
-                        <span class="input-group-addon" style="height: 70px;  background:black; color:white; border:2px solid white; "><i class="fa fa-phone "></i> </span>
-                    
-                              
-                              <input type="text" name="" required="" placeholder="Phone number " style="height: 70px; width: 100%; background:black; color:white; border: 2px solid white; 
-                              border-left: none; font-size: 15px;letter-spacing: .7px;">
-                              
-                          </div>
-                         </div>
-                             <br><br>
-
-                         <div class="row">
-                    
-                              
-                          <textarea type="text" class="input-group" placeholder=" message" style="height: 140px; width: 100%;  background:black; color:white; border: 2px solid white; font-size: 15px;letter-spacing: .7px; word-spacing: 3px; padding: 6px;  ">
-                              </textarea>
-                              
-                         
-                         </div>
-                          <br><br><br>
-                         <div class="row">
-                       <button type="submit" class="btn btn-block" style="background-color: white; color:black;">send message</button>
-                           
-                         </div>
-
-
-                         
-                    </form>
-      </div>
-
-         <div class="col-md-5" id="details"style="padding-left: 20px;">
-          <h2 style="text-transform: capitalize;">contact me for more details</h2>
-          <p style="word-spacing: 5px; letter-spacing: 1px ; font-size: 17px; transform: none;text-transform: capitalize;">
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitationur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p><br><br>
-            <div class="details" style="font-size: 22px; line-height: 42px;transform: none;">
-           <p> <span><i class="fa fa-phone "></i></span> +91- 99628 11722</p>
-           <p style="color: blue;"> <span> <i class="fa fa-envelope"></i></span> mail@example.com</p>
-           <p> <span><i class="fa fa-map-marker" aria-hidden="true"></i></span> kattupakam ,chennai,tamilnadu</p>
-           <p> <span><i class="fa fa-twitter"></i></span> twitter/@my_website</p>
-           <p> <span><i class="fa fa-instagram"></i></span> instagram/@my_website</p>
-
-              </div>
-
-      </div>
-      <div class="col-md-1">
-  
-       </div>
-      
-  </div>
-
-<br><br>
-<a href="#section1" id="top"><button style="height: 45px; width: 45px;background-color: #FFC312; margin-left: 18px;margin-top: 18px; border-radius: 50%;border:none;animation: button 5s linear 1s infinite alternate; "><i class="fa fa-angle-double-up" style="color: black; font-size: 35px;"></i></button></a>
-<br><br>
-<footer class="social">
-  <div class="row"  style="padding-top:20px;">
-
-
-<div class="col-md-1">
-
-</div>
-    <div class="col-md-4">
-      
-      <h2 style="text-transform: capitalize;">thanks for watching my website</h2>
-    </div>
-    <div class="col-md-7">
-
-    <h3 >connect with me: 
-
-        <a href="https://www.facebook.com/"  target="_blank" id="f">
-                <i class="fa fa-facebook-square"></i></a>
-               <a href="https://twitter.com/login?lang=en"  target="_blank" id="t">
-                <i class="fa fa-twitter-square"></i></a>
-               <a href="https://www.instagram.com/"  target="_blank" id="i">
-                <i class="fa fa-instagram"></i></a>
-               <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"  target="_blank" id="g"><i class="fa fa-google-plus"></i></a>
-
-               <a href="https://www.linkedin.com/uas/login"  target="_blank" id="l">
-                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
- </h3>
-    </div>
-
-  </div>
-</footer>
-</div>
-  </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
+
 </html>
