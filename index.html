@@ -13,6 +13,10 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
     <style>
         *.nav {
@@ -120,7 +124,7 @@
         .nav-pills .show>.nav-link {
             color: #fff !important;
 
-           background: transparent;
+            background: transparent;
 
         }
 
@@ -161,7 +165,7 @@
             border-bottom: 1px dashed #ddd;
             margin: 40px 0;
         }
-       
+
         /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -180,9 +184,11 @@
             z-index: 999;
             background: #000000;
             /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #434343, #000000);
+            background: -webkit-linear-gradient(135deg, #000000 80%, #fff 20%, #000);
+            background: linear-gradient(135deg, #000000 80%, #fff 20%);
             /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #434343, #000000);
+            background: linear-gradient(135deg, #000000 80%, #fff 20%);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             color: #fff;
             transition: all 0.3s;
@@ -212,48 +218,53 @@
         }
 
 
-/* width */
-::-webkit-scrollbar {
-  width: 20px;
-}
+        /* width */
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 15px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to left, #434343, #000000);
-  border-radius: 10px;
-}
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to right, #434343, #000000);
-}
+        /* Track */
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 15px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to left, #434343, #000000);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to right, #434343, #000000);
+        }
 
         #sidebar ul li a {
             padding: 20px;
             font-size: 1.1em;
             line-height: 20px;
-        
+
             display: block;
         }
+
         #sidebar ul li a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 5px;
-    background: rgb(255, 255, 255);
-    transition: width .6s;
-}
+            content: '';
+            display: block;
+            width: 0;
+            height: 5px;
+            background: rgb(255, 255, 255);
+            transition: width .6s;
+        }
 
         #sidebar ul li a:hover::after {
             color: #fff;
             width: 100%;
-     
+
         }
 
         #sidebar ul li.active>a,
@@ -763,8 +774,8 @@
         }
 
         .demo_tm_skills_wrap {
-            background:linear-gradient(to bottom right,#444444 ,#000);
-        color:white;
+            background-color: #000000;
+            color: white;
             padding: 90px 0px;
             margin-bottom: 100px;
         }
@@ -1413,165 +1424,341 @@
             font-weight: 600;
             position: relative;
         }
+
+        /* go to top  */
+
+        @keyframes button {
+
+            0% {
+                position: fixed;
+                right: 3%;
+                bottom: 5%;
+            }
+            35% {
+                position: fixed;
+                right: 3%;
+                bottom: 7%;
+            }
+
+            50% {
+                position: fixed;
+                right: 3%;
+                bottom: 7%;
+            }
+            75% {
+                position: fixed;
+                right: 3%;
+                bottom: 2%;
+            }
+            85% {
+                position: fixed;
+                right: 3%;
+                bottom: 3%;
+            }
+
+            100% {
+                position: fixed;
+                right: 3%;
+                bottom: 5%;
+            }
+
+        }
+
+        #top {
+            position: fixed;
+            right: 0%;
+            bottom: 5%;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
         /*---------------------------------------------------*/
-/*	15) demo MEDIA QUERIES (FOR SMALL DEVIVES)
+
+        /*	15) demo MEDIA QUERIES (FOR SMALL DEVIVES)
 /*---------------------------------------------------*/
 
-@media (max-width: 1400px) {
-	.demo_tm_about_wrap .leftbox{padding-right: 0px;}
-}
-@media (max-width: 1200px) {
-	.demo_tm_services_wrap .list_wrap ul li{width: 50%;}
-	#demo_tm_popup_blog .close{right: 0px;}
-	.demo_tm_list_wrap > ul.total > li{width: 50%;}
-	.demo_tm_about_wrap .leftbox{display: none;}
-	.demo_tm_about_wrap .rightbox{padding-left: 0px;width: 100%;}
-	.demo_tm_contact_wrap_all .leftbox{width: 100%;padding-right: 0px;margin-bottom: 19px;}
-	.demo_tm_contact_wrap_all .rightbox{width: 100%;float: none;}
-    p>.sticky-top{
-        display: none;
-    }
-}
-@media (max-width: 1040px) {
-	.demo_tm_about_wrap{flex-direction: column;}
-	.demo_tm_about_wrap .rightpart .info_list ul li{width: 100%;}
-	.demo_tm_about_wrap .leftpart{width: 100%;padding-right: 0px;margin-bottom: 60px;}
-	.demo_tm_about_wrap .rightpart{width: 100%;}
-	.demo_tm_skills_wrap .inner_wrap{flex-direction: column;}
-	.demo_tm_skills_wrap .leftbox{padding-right: 0px;width: 100%;margin-bottom: 60px;}
-	.demo_tm_skills_wrap .rightbox{width: 100%;padding-left: 0px;}
-	.demo_tm_main_demos_list_wrap ul{margin: 0px;}
-	.demo_tm_main_demos_list_wrap ul li{width: 100%;padding: 0px;}
-	.demo_tm_portfolio_single_wrap .details_wrap{flex-direction: column;}
-	.demo_tm_portfolio_single_wrap .details_wrap .leftbox{padding-right: 0px;width: 100%;margin-bottom: 50px;}
-	.demo_tm_portfolio_single_wrap .details_wrap .rightbox{width: 100%;}
-	.demo_tm_mobile_header_wrap{display: block;}
-	.demo_tm_preloader{display: none;}
-	.demo_tm_leftpart_wrap{display: none;}
-	.demo_tm_rightpart{padding-left: 0px;}
-    p>.sticky-top{
-        display: none;
-        visibility: hidden;
-    }
-}
-@media (max-width: 768px) {
-	.demo_tm_hero_header_wrap .name_holder h3{font-size: 40px;}
-	.demo_tm_hero_header_wrap .text_typing p{font-size: 21px;}
-	.demo_tm_title_holder h3{font-size: 45px;}
-	.demo_tm_title_holder:before{top: -2px;}
-	.demo_tm_services_wrap .list_wrap ul{margin: 0px;}
-	.demo_tm_services_wrap .list_wrap ul li{width: 100%;padding-left: 0px;}
-	.demo_tm_counter_list li{width: 50%;}
-	.demo_tm_counter_list li .inner{padding: 45px 15px 48px 15px;}
-	.demo_tm_portfolio_list > li{width: 50%;}
-	.demo_tm_list_wrap > ul.total{margin: 0px;}
-	.demo_tm_list_wrap > ul.total > li{width: 100%;padding-left: 0px;}
-	.demo_tm_about_wrap .about_short_contact_wrap ul li{width: 100%;}
-	.demo_tm_totop{right: 20px;bottom: 10px;}
-	.demo_tm_totop.opened{bottom: 20px;}
-	.demo_tm_preloader{display: none;}
-	.demo_tm_portfolio_single_wrap .title_holder h3{font-size: 45px;}
-    p>.sticky-top{
-        display: none;
-    }
-}
-@media (max-width: 480px) {
-	.demo_tm_hero_header_wrap .name_holder h3{font-size: 30px;}
-	.demo_tm_hero_header_wrap .text_typing p{font-size: 18px;}
-	.demo_tm_title_holder:before{display: none;}
-	.demo_tm_title_holder h3{padding-left: 0px;}
-	.demo_tm_title_holder span{padding-left: 0px;}
-	.demo_tm_counter_list li{width: 100%;}
-	.demo_tm_counter_list li .inner{padding: 0px 0px 35px 0px;}
-	.demo_tm_portfolio_list{margin: 0px;}
-	.demo_tm_portfolio_list > li{width: 100%;padding-left: 0px;}
-	.demo_tm_counter_wrap{padding: 94px 0px 48px 0px;}
-    p>.sticky-top{
-        display: block;
-    }
-    .demo_tm_skills_wrap{
-        background:linear-gradient(to bottom right,#444444 ,#000);
-        color:white;
-    padding: 90px 0px;
-    margin-bottom: 10px;
-    }
-    #Home {
-height: 400px;
-    position: relative;
-    text-align: center;
-    color: white;}
-    .typewriter {
-            font-family: Courier, monospace;
-            position: absolute;
-            width:300px;
-            top: 30%;
-            left: 30%;
-            transform: translate(-30%, -30%);
-            background: rgba(0, 0, 0, 0.5);
-            color: black;
-        }
-
-        .typewriter span {
-            color: white;
-            font-weight: bold;
-            font-size: 30px;
-            display: inline-block;
-            vertical-align: middle;
-            line-height: normal;
-        }
-
-        .typewriter-text {
-            display: inline-block;
-            overflow: hidden;
-            letter-spacing: 2px;
-            animation: typing 5s steps(30, end) infinite, blink .75s step-end infinite;
-            white-space: nowrap;
-            font-size: 20px;
-            font-weight: 700;
-            /* border-right: 4px solid orange; */
-            box-sizing: border-box;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0%
-            }
-            to {
-                width: 100%
+        @media (max-width: 1400px) {
+            .demo_tm_about_wrap .leftbox {
+                padding-right: 0px;
             }
         }
 
-        @keyframes blink {
-            from,
-            to {
-                border-color: transparent
+        @media (max-width: 1200px) {
+            .demo_tm_services_wrap .list_wrap ul li {
+                width: 50%;
             }
-            50% {
-                border-color: orange;
+            #demo_tm_popup_blog .close {
+                right: 0px;
+            }
+            .demo_tm_list_wrap>ul.total>li {
+                width: 50%;
+            }
+            .demo_tm_about_wrap .leftbox {
+                display: none;
+            }
+            .demo_tm_about_wrap .rightbox {
+                padding-left: 0px;
+                width: 100%;
+            }
+            .demo_tm_contact_wrap_all .leftbox {
+                width: 100%;
+                padding-right: 0px;
+                margin-bottom: 19px;
+            }
+            .demo_tm_contact_wrap_all .rightbox {
+                width: 100%;
+                float: none;
+            }
+            p>.sticky-top {
+                display: none;
             }
         }
-}	
 
+        @media (max-width: 1040px) {
+            .demo_tm_about_wrap {
+                flex-direction: column;
+            }
+            .demo_tm_about_wrap .rightpart .info_list ul li {
+                width: 100%;
+            }
+            .demo_tm_about_wrap .leftpart {
+                width: 100%;
+                padding-right: 0px;
+                margin-bottom: 60px;
+            }
+            .demo_tm_about_wrap .rightpart {
+                width: 100%;
+            }
+            .demo_tm_skills_wrap .inner_wrap {
+                flex-direction: column;
+            }
+            .demo_tm_skills_wrap .leftbox {
+                padding-right: 0px;
+                width: 100%;
+                margin-bottom: 60px;
+            }
+            .demo_tm_skills_wrap .rightbox {
+                width: 100%;
+                padding-left: 0px;
+            }
+            .demo_tm_main_demos_list_wrap ul {
+                margin: 0px;
+            }
+            .demo_tm_main_demos_list_wrap ul li {
+                width: 100%;
+                padding: 0px;
+            }
+            .demo_tm_portfolio_single_wrap .details_wrap {
+                flex-direction: column;
+            }
+            .demo_tm_portfolio_single_wrap .details_wrap .leftbox {
+                padding-right: 0px;
+                width: 100%;
+                margin-bottom: 50px;
+            }
+            .demo_tm_portfolio_single_wrap .details_wrap .rightbox {
+                width: 100%;
+            }
+            .demo_tm_mobile_header_wrap {
+                display: block;
+            }
+            .demo_tm_preloader {
+                display: none;
+            }
+            .demo_tm_leftpart_wrap {
+                display: none;
+            }
+            .demo_tm_rightpart {
+                padding-left: 0px;
+            }
+            p>.sticky-top {
+                display: none;
+                visibility: hidden;
+            }
+        }
 
+        @media (max-width: 768px) {
+            .demo_tm_hero_header_wrap .name_holder h3 {
+                font-size: 40px;
+            }
+            .demo_tm_hero_header_wrap .text_typing p {
+                font-size: 21px;
+            }
+            .demo_tm_title_holder h3 {
+                font-size: 45px;
+            }
+            .demo_tm_title_holder:before {
+                top: -2px;
+            }
+            .demo_tm_services_wrap .list_wrap ul {
+                margin: 0px;
+            }
+            .demo_tm_services_wrap .list_wrap ul li {
+                width: 100%;
+                padding-left: 0px;
+            }
+            .demo_tm_counter_list li {
+                width: 50%;
+            }
+            .demo_tm_counter_list li .inner {
+                padding: 45px 15px 48px 15px;
+            }
+            .demo_tm_portfolio_list>li {
+                width: 50%;
+            }
+            .demo_tm_list_wrap>ul.total {
+                margin: 0px;
+            }
+            .demo_tm_list_wrap>ul.total>li {
+                width: 100%;
+                padding-left: 0px;
+            }
+            .demo_tm_about_wrap .about_short_contact_wrap ul li {
+                width: 100%;
+            }
+            .demo_tm_totop {
+                right: 20px;
+                bottom: 10px;
+            }
+            .demo_tm_totop.opened {
+                bottom: 20px;
+            }
+            .demo_tm_preloader {
+                display: none;
+            }
+            .demo_tm_portfolio_single_wrap .title_holder h3 {
+                font-size: 45px;
+            }
+            p>.sticky-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .demo_tm_hero_header_wrap .name_holder h3 {
+                font-size: 30px;
+            }
+            .demo_tm_hero_header_wrap .text_typing p {
+                font-size: 18px;
+            }
+            .demo_tm_title_holder:before {
+                display: none;
+            }
+            .demo_tm_title_holder h3 {
+                padding-left: 0px;
+            }
+            .demo_tm_title_holder span {
+                padding-left: 0px;
+            }
+            .demo_tm_counter_list li {
+                width: 100%;
+            }
+            .demo_tm_counter_list li .inner {
+                padding: 0px 0px 35px 0px;
+            }
+            .demo_tm_portfolio_list {
+                margin: 0px;
+            }
+            .demo_tm_portfolio_list>li {
+                width: 100%;
+                padding-left: 0px;
+            }
+            .demo_tm_counter_wrap {
+                padding: 94px 0px 48px 0px;
+            }
+            p>.sticky-top {
+                display: block;
+            }
+            .demo_tm_skills_wrap {
+                background: linear-gradient(to bottom right, #444444, #000);
+                color: white;
+                padding: 90px 0px;
+                margin-bottom: 10px;
+            }
+            #Home {
+                height: 400px;
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+            .typewriter {
+                font-family: Courier, monospace;
+                position: absolute;
+                width: 300px;
+                top: 30%;
+                left: 30%;
+                transform: translate(-30%, -30%);
+                background: rgba(0, 0, 0, 0.5);
+                color: black;
+            }
+
+            .typewriter span {
+                color: white;
+                font-weight: bold;
+                font-size: 30px;
+                display: inline-block;
+                vertical-align: middle;
+                line-height: normal;
+            }
+
+            .typewriter-text {
+                display: inline-block;
+                overflow: hidden;
+                letter-spacing: 2px;
+                animation: typing 5s steps(30, end) infinite, blink .75s step-end infinite;
+                white-space: nowrap;
+                font-size: 20px;
+                font-weight: 700;
+                /* border-right: 4px solid orange; */
+                box-sizing: border-box;
+            }
+
+            @keyframes typing {
+                from {
+                    width: 0%
+                }
+                to {
+                    width: 100%
+                }
+            }
+
+            @keyframes blink {
+                from,
+                to {
+                    border-color: transparent
+                }
+                50% {
+                    border-color: orange;
+                }
+            }
+        }
+
+        /* <!-- for loader --> */
     </style>
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
+
     <div class="wrapper">
         <div class="row">
-            <div id="sidebar">
+            <div id="sidebar" data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
                 <nav id="myScrollspy">
-                   
+
                     <!-- <span style="margin:0 40px;display: inline;  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
                     filter: grayscale(100%);">
                         <img src="./img/home.jpg" style="height: 100px;width:100px;border-radius:50%;">
                     </span> -->
-                        <p class="clearfix">
+                    <p class="clearfix">
 
-                        </p>
-                    <a class="navbar-brand" href="#" style="font-family:verdana;font-weight: bolder;padding: 14px 4px 4px 4px; margin:20px auto;"><span style="border:2.4px solid white;padding: 8px 20px 5px 20px; ">KARTHIK RAJI</span></a>
-                    <a class="navbar-brand" href="#" style="font-family:verdana;font-weight:lighter; font-size: 16px;padding: 14px 4px 4px 4px; margin:0px auto; font-family: poppins"><span style="padding: 8px 20px 5px 20px; border-bottom:3px solid rgb(136, 133, 133)">Juniour Software Developer</span></a>
+                    </p>
+                    <a class="navbar-brand" href="#" style="font-family:verdana;font-weight: bolder;padding: 14px 4px 4px 4px; margin:20px auto;">
+                        <span style="border:2.4px solid white;padding: 8px 20px 5px 20px; ">KARTHIK RAJI</span>
+                    </a>
+                    <a class="navbar-brand" href="#" style="font-family:verdana;font-weight:lighter; font-size: 16px;padding: 14px 4px 4px 4px; margin:0px auto; font-family: poppins">
+                        <span style="padding: 8px 20px 5px 20px; border-bottom:3px solid white">Juniour Software Developer</span>
+                    </a>
 
 
                     <ul class="nav nav-pills flex-column">
@@ -1588,40 +1775,44 @@ height: 400px;
                         <li class="nav-item">
                             <a class="nav-link" href="#Contact">CONTACT </a>
                         </li>
-                        
-                    
+
+
                     </ul>
 
                 </nav>
-             
-               
-            
-            </div>
-  
-            	
-          
-            <div id="content">
-                
-            <span class="fixed-top">
-                    <button type="button" id="sidebarCollapse" class="btn .bg-transparent" >
-                            <i class="fas fa-angle-double-right"></i>
-                        </button>
-                    </span>
-                                
-                            
-                            
-            
-                   
-                <div id="Home">
 
-                    <img src="./images/homeBg.jpg" style="filter: grayscale(100%)">
+
+
+            </div>
+
+
+
+            <div id="content">
+                <span class="fixed-top">
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark" data-toggle="tooltip" title="Hooray!">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </span>
+
+
+
+
+
+
+                <div id="Home" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="top-center">
+
+
+                    <img src="./images/homebg.jpg" style="filter: grayscale(100%)">
+
                     <div class="typewriter">
 
-                        <div class="typewriter-text"> I'M karthik ,
-                            <span>Junior SoftWare Developer</span>.</div>
+                        <div class="typewriter-text">
+                            I'M karthik ,
+                            <span>Junior SoftWare Developer</span>
+                        </div>
                     </div>
                 </div>
-                <div id="About">
+                <div id="About" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <!-- ABOUT -->
                     <div class="demo_tm_section relative" id="about">
                         <div class="demo_tm_about_wrapper_all">
@@ -1657,11 +1848,11 @@ height: 400px;
 
                                                     <li>
                                                         <span>
-                                                            <label>City:</label> CHENNAI,INDIA </span>
+                                                            <label>City:</label> Tambaram,Chennai </span>
                                                     </li>
                                                     <li>
                                                         <span>
-                                                            <label>Interests:</label> cricket</span>
+                                                            <label>Interests:</label> Cricket</span>
                                                     </li>
                                                     <li>
                                                         <span>
@@ -1687,7 +1878,7 @@ height: 400px;
                                                     <li>
                                                         <span>
                                                             <label>Phone:</label>
-                                                            <a href="">+91 9962811722</a>
+                                                            <a href="">+91 8667345632</a>
                                                         </span>
                                                     </li>
 
@@ -1716,11 +1907,11 @@ height: 400px;
                     <!-- /ABOUT -->
                 </div>
                 <!-- SKILLS -->
-                <div class="demo_tm_section">
+                <div class="demo_tm_section" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                     <div class="demo_tm_skills_wrap">
-                           
+
                         <div class="container">
-                                <h3>Skills</h3>
+                            <h1>Skills</h1>
                             <div class="row">
                                 <div class="col-md-2">
                                     <b>HTML 5</b>
@@ -1818,7 +2009,7 @@ height: 400px;
                     <div class="demo_tm_section relative" id="portfolio">
                         <div class="demo_tm_portfolio_wrapper_all">
                             <!-- PORTFOLIO FILTER -->
-                         <!-- <div class="demo_tm_second_portfolio">
+                            <!-- <div class="demo_tm_second_portfolio">
                                 <div class="container">
                                     <div class="demo_tm_portfolio_wrap">
                                         <div class="demo_tm_title_holder portfolio">
@@ -1907,7 +2098,7 @@ height: 400px;
                                 <span>Get in touch with me</span>
                             </div>
                         </div>
-                        <div class="demo_tm_footer_contact_wrapper_all">
+                        <div class="demo_tm_footer_contact_wrapper_all" data-aos="fade-up" data-aos-offset="600" data-aos-easing="ease-in-sine">
                             <div class="demo_tm_contact_wrap_all">
                                 <div class="container">
                                     <div class="leftbox">
@@ -1982,6 +2173,12 @@ height: 400px;
                             </div>
                         </div>
                     </div>
+                    <a href="#Home" id="top" style="display:none;">
+                        <button class="btn btn-dark" style="height: 45px; width: 45px; margin-left: 18px;margin-top: 18px;border-radius: 40px;animation: button 5s linear 1s infinite alternate;">
+                            <i class="fa fa-angle-double-up" style="color: white; font-size: 20px; "></i>
+                        </button>
+                    </a>
+
                     <!-- /CONTACT & FOOTER -->
                 </div>
 
@@ -1990,6 +2187,8 @@ height: 400px;
     </div>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <!-- Bootstrap JS -->
@@ -2009,6 +2208,29 @@ height: 400px;
             });
         });
     </script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- go to Top -->
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#top').fadeIn();
+                } else {
+                    $('#top').fadeOut();
+                }
+            });
+            $('#top').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
+    <!-- for Loader -->
+
+
 </body>
 
 </html>
