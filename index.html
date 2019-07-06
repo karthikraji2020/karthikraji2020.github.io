@@ -28,8 +28,10 @@
     }
     
     #particles-js{
+        filter: grayscale(80%);
     background: url('./images/homeBg.jpg');
     background-size: cover;
+    background-position:center;
     background-repeat: no-repeat;
     height: 100vh;
     /* filter: grayscale(50%); */
@@ -39,8 +41,6 @@ width:100%;
       
 .overlay {
   position: absolute; 
- 
-  background: rgba(0, 0, 0, 0.3); /* Black see-through */
   color: #f1f1f1; 
     height: 100%;
   width: 100%;
@@ -51,6 +51,9 @@ width:100%;
   padding: 20px;
   text-align: center;
 }
+
+
+
     </style>
 
 </head>
@@ -62,14 +65,12 @@ width:100%;
         <div class="row">
             <div id="sidebar" data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="2500">
                 <nav id="myScrollspy">
-
+                      
                     <!-- <span style="margin:0 40px;display: inline;  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
                     filter: grayscale(100%);">
                         <img src="./img/home.jpg" style="height: 100px;width:100px;border-radius:50%;">
                     </span> -->
-                    <p class="clearfix">
-
-                    </p>
+                  
                     <a class="navbar-brand" href="#"
                         style="font-family:verdana;font-weight: bolder;padding: 14px 4px 4px 4px; margin:20px auto;">
                         <span style="border:2.4px solid white;padding: 8px 20px 5px 20px; ">KARTHIK RAJI</span>
@@ -90,33 +91,52 @@ width:100%;
                             <a class="nav-link" href="#About">ABOUT </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Portfolio">PORTFOLIO </a>
+                            <a class="nav-link" href="#Skills">SKILLS </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Contact">CONTACT </a>
                         </li>
 
-
+                       
                     </ul>
-
+                 
                 </nav>
 
-
+              
 
             </div>
 
-
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" id="mobilenavbar" style="z-index:9999;">
+                <a class="navbar-brand" href="#">KARTHIK RAJI</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#Home">HOME </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About">ABOUT </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Skills">SKILLS </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact">CONTACT </a>
+                    </li>
+                  </ul>
+                </div>  
+              </nav>
 
             <div id="content">
-                <span class="fixed-top">
-                    <button type="button" id="sidebarCollapse" class="btn btn-dark" data-toggle="tooltip"
-                        title="Hooray!">
+                <span id="menuBar">
+                        <button type="button" id="sidebarCollapse" class="btn btn-dark" >
                         <i class="fas fa-bars"></i>
                     </button>
                 </span>
-
-
-
+              
 
 
                
@@ -128,7 +148,7 @@ width:100%;
                         <div class="typewriter">
 
                             <div class="typewriter-text">
-                                I'M karthik,
+                                I'M karthik,<br>
                                 <span>Junior SoftWare Developer</span>
                             </div>
                         </div> 
@@ -158,7 +178,7 @@ width:100%;
                                                 <p>Hi! My name is
                                                     <strong>Karthik Raji</strong>. I am a Junior Software Developer, working in vs online services
                                                     I'm very
-                                                    passionate and dedicated to my work. , I have acquired the skills
+                                                    passionate and dedicated to my work.I have acquired the skills
                                                     and
                                                     knowledge necessary to make your project a success. I enjoy every
                                                     step
@@ -172,7 +192,7 @@ width:100%;
                                                 <ul>
                                                     <li>
                                                         <span>
-                                                            <label>Birthday:</label> 16.06.1997</span>
+                                                            <label>DOB:</label> 16.06.1997</span>
                                                     </li>
 
                                                     <li>
@@ -238,111 +258,115 @@ width:100%;
                     </div>
                     <!-- /ABOUT -->
                 </div>
-                <!-- SKILLS -->
-                <div class="demo_tm_section" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000">
-                    <div class="demo_tm_skills_wrap">
+                
+               <div  id="Skills" >
+<!-- SKILLS -->
+<div class="demo_tm_section" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+data-aos-duration="2000">
+<div class="demo_tm_skills_wrap">
 
-                        <div class="container">
-                            <h1>Skills</h1>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>HTML 5</b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
-                                            style="width: 87%; background-color: #262626; ">
-                                            <b>87%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>CSS 3</b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress ">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
-                                            style="width: 82%; background-color: #262626; ">
-                                            <b>82%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>Bootstrap 3/4</b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress ">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                                            style="width: 75%; background-color: #262626; ">
-                                            <b>75%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>Javascript </b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress ">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
-                                            style="width: 76%; background-color: #262626; ">
-                                            <b>76%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>Angular 7</b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress ">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
-                                            style="width:72%; background-color: #262626; ">
-                                            <b>72%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <b>Ionic 4</b>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="progress ">
-                                        <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                                            aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                                            style="width: 77%; background-color: #262626; ">
-                                            <b>77%</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <h1>Skills</h1>
+        <div class="row">
+            <div class="col-md-2">
+                <b>HTML 5</b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 87%; background-color: #262626; ">
+                        <b>87%</b>
                     </div>
                 </div>
-                <!-- /SKILLS -->
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <b>CSS 3</b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress ">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 82%; background-color: #262626; ">
+                        <b>82%</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <b>Bootstrap 3/4</b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress ">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 75%; background-color: #262626; ">
+                        <b>75%</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <b>Javascript </b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress ">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 76%; background-color: #262626; ">
+                        <b>76%</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <b>Angular 7</b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress ">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
+                        style="width:72%; background-color: #262626; ">
+                        <b>72%</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <b>Ionic 4</b>
+            </div>
+            <div class="col-md-10">
+                <div class="progress ">
+                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
+                        aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 77%; background-color: #262626; ">
+                        <b>77%</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- /SKILLS -->
+               </div>
+            
                  <!-- PORTFOLIO -->
                 <!-- <div id="Portfolio">
                    
@@ -520,6 +544,7 @@ width:100%;
                             </div>
                         </div>
                     </div>
+                </div>
                     <a href="#Home" id="top" style="display:none;">
                         <button class="btn btn-dark"
                             style="height: 45px; width: 45px; margin-left: 18px;margin-top: 18px;border-radius: 40px;animation: button 5s linear 1s infinite alternate;">
@@ -528,7 +553,7 @@ width:100%;
                     </a>
 
                     <!-- /CONTACT & FOOTER -->
-                </div>
+               
 
             </div>
         </div>
