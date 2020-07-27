@@ -13,8 +13,16 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script> -->
+    <!-- in your header -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+
+   <!-- Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+
+   <!-- icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -52,7 +60,137 @@ width:100%;
   text-align: center;
 }
 
+.gallery-title
+{
+    font-size: 36px;
+    color: #262626;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #262626;
+    border-radius: 5px;
+    text-align: center;
+    color: #262626;
+    margin-bottom: 30px;
 
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #262626;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #262626;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #262626;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+footer {
+    background-color: #454545;
+    color: white;
+    }
+    .page-footer .footer-links {
+    text-align: right;
+    }
+
+    @media screen and (max-width: 767px) {
+    .page-footer .footer-child {
+    text-align: center;
+    }
+    }
+ /* .social{
+    } */
+
+    .row .skills{
+        width:70%;
+        margin:1.5rem auto;
+    }
+    .social .fa,.skills .skillCol {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius:50%;
+    border:3px solid #ccc;
+    /* box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(146, 145, 145); */
+    box-shadow: 1px 3px 3px #dddddd, inset 2px 6px 6px rgb(146, 145, 145);
+    background:rgb(78, 78, 78); 
+    }
+    .skills{
+        display:flex;
+        justify-content:space-around;
+        flex-wrap: wrap;
+    }
+    .skills .skillCol {
+    background:rgb(255, 255, 255); 
+    border:1px solid #ccc;
+    padding: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    border-radius:50%;
+       box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(146, 145, 145);
+    }
+    .social .fa:hover,.skills .skillCol:hover {
+    cursor: pointer;
+    transition:.7s;
+    transform: scale(.91); 
+    box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(146, 145, 145);
+    }
+    .skills .skillCol:hover {
+    box-shadow: 1px 3px 3px #dddddd, inset 2px 6px 6px rgb(146, 145, 145);
+
+    }
+
+    .fa-google {
+    color: #dd4b39;
+    background: white;
+    }
+
+    .fa-linkedin {
+    color: #007bb5;
+    background: white;
+    }
+    
+    .fa-.google {
+    background-color: #dd4b39;
+    color: white;
+    }
+    .fa-instagram{
+    background: white;
+    color: #fe4164;
+    }
+    .fa-.linkedin {
+    background-color: #007bb5;
+    color: white;
+    }
+   
 
     </style>
 
@@ -133,7 +271,7 @@ width:100%;
             <div id="content">
                 <span id="menuBar">
                         <button type="button" id="sidebarCollapse" class="btn btn-dark" >
-                        <i class="fas fa-bars"></i>
+                        <i class="fa fa-bars"></i>
                     </button>
                 </span>
               
@@ -197,7 +335,7 @@ width:100%;
 
                                                     <li>
                                                         <span>
-                                                            <label>City:</label> Tambaram,Chennai </span>
+                                                            <label>Location:</label>Chennai </span>
                                                     </li>
                                                     <li>
                                                         <span>
@@ -264,103 +402,41 @@ width:100%;
 <div class="demo_tm_section" data-aos="flip-left" data-aos-easing="ease-out-cubic"
 data-aos-duration="2000">
 <div class="demo_tm_skills_wrap">
+   
 
     <div class="container">
-        <h1>Skills</h1>
-        <div class="row">
-            <div class="col-md-2">
-                <b>HTML 5</b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 87%; background-color: #262626; ">
-                        <b>87%</b>
-                    </div>
-                </div>
-            </div>
+        <div class="demo_tm_title_holder">
+            <h3>Skill</h3>
+            <span>Main informations about me</span>
         </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <b>CSS 3</b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress ">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 82%; background-color: #262626; ">
-                        <b>82%</b>
-                    </div>
-                </div>
-            </div>
+        <div class="row skills">
+        <div class="skillCol">
+            <i class="devicon-html5-plain-wordmark  colored "></i>
         </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <b>Bootstrap 3/4</b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress ">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 75%; background-color: #262626; ">
-                        <b>75%</b>
-                    </div>
-                </div>
-            </div>
+        <div class="skillCol">
+            <i class="devicon-css3-plain-wordmark  colored "></i>
         </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <b>Javascript </b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress ">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 76%; background-color: #262626; ">
-                        <b>76%</b>
-                    </div>
-                </div>
-            </div>
+        <div class="skillCol">
+            <i class="devicon-bootstrap-plain-wordmark  colored "></i>
         </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <b>Angular 7</b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress ">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"
-                        style="width:82%; background-color: #262626; ">
-                        <b>72%</b>
-                    </div>
-                </div>
-            </div>
+        <div class="skillCol">
+            <i class="devicon-javascript-plain colored "></i>
         </div>
-         <br>
-        <br>
-        <div class="row">
-            <div class="col-md-2">
-                <b>Node Js</b>
-            </div>
-            <div class="col-md-10">
-                <div class="progress ">
-                    <div class="progress-bar progress-bar-dark progress-bar-striped active"
-                        aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 77%; background-color: #262626; ">
-                        <b>77%</b>
-                    </div>
-                </div>
-            </div>
         </div>
+        <div class="row skills">
+        <div class="skillCol">
+            <i class="devicon-angularjs-plain colored"></i>
+        </div>
+        <div class="skillCol">
+            <i class="devicon-express-original colored"></i>
+        </div>
+        <div class="skillCol">
+            <i class="devicon-nodejs-plain-wordmark  colored "></i>
+        </div>
+        <div class="skillCol">
+            <i class="devicon-git-plain-wordmark colored "></i>
+        </div>
+    </div>
     </div>
 </div>
 </div>
@@ -368,92 +444,104 @@ data-aos-duration="2000">
                </div>
             
                  <!-- PORTFOLIO -->
-                <!-- <div id="Portfolio">
-                   
-                    <div class="demo_tm_section relative" id="portfolio">
-                        <div class="demo_tm_portfolio_wrapper_all"> -->
-                            <!-- PORTFOLIO FILTER -->
-                      <!-- <div class="demo_tm_second_portfolio">
-                                <div class="container">
-                                    <div class="demo_tm_portfolio_wrap">
-                                        <div class="demo_tm_title_holder portfolio">
-                                            <h3>Creative Works</h3>
-                                            <span>Check out our latest creative works</span>
-                                        </div>
-                                        <div class="demo_tm_portfolio_titles"></div>
-                                        <ul class="demo_tm_portfolio_filter">
-                                            <li>
-                                                <a href="#" class="current" data-filter="*">All</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-filter=".design">Design</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-filter=".photography">Photography</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-filter=".development">Development</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="demo_tm_portfolio_list gallery_zoom">
-                                            <li class="design">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Aoc Productions" data-category="Design">
-                                                    <a href="">
-                                                        <img src="./img/profile.jpg" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/1.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li class="photography">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Ind Hed" data-category="Photography">
-                                                    <a href="">
-                                                        <img src="" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/2.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li class="development">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Paper Mockup" data-category="Development">
-                                                    <a href="">
-                                                        <img src="img/portfolio/600x600.jpg" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/3.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li class="photography">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="The Nordic" data-category="Photography">
-                                                    <a href="">
-                                                        <img src="img/portfolio/600x600.jpg" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/4.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li class="design">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="Creatives Castle" data-category="Design">
-                                                    <a href="portfolio-single-5.html">
-                                                        <img src="img/portfolio/600x600.jpg" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/5.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li class="photography">
-                                                <div class="entry demo_tm_portfolio_animation_wrap" data-title="White Bag" data-category="Photography">
-                                                    <a href="portfolio-single-6.html">
-                                                        <img src="img/portfolio/600x600.jpg" alt="" />
-                                                        <div class="demo_tm_portfolio_image_main" data-img-url="img/portfolio/6.jpg"></div>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>   -->
-                            
-                            <!-- /PORTFOLIO FILTER -->
-                        <!-- </div>
-                    </div>
-                  
-                </div> -->
+
+
+
+ <div class="container">
+    <div class="row">
+    <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h1 class="gallery-title">Projects</h1>
+    </div>
+    </div>
+
+    <div align="center">
+        <button class="btn btn-default filter-button" data-filter="all">All</button>
+        <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
+        <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
+        <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
+    </div>
+    <br/>
+
+
+    <div class="row">
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter sprinkle">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+
+        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter sprinkle">
+            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+               
                   <!-- /PORTFOLIO -->
                 <div id="Contact">
                     <!-- CONTACT & FOOTER -->
@@ -468,46 +556,7 @@ data-aos-duration="2000">
                             data-aos-easing="ease-in-sine">
                             <div class="demo_tm_contact_wrap_all">
                                 <div class="container">
-                                    <div class="leftbox">
-                                        <div class="demo_tm_mini_title_holder contact">
-                                            <h4>Get in Touch</h4>
-                                        </div>
-                                        <div class="short_info_wrap">
-                                            <ul>
-                                                <li>
-                                                    <p>
-                                                        <label>Address:</label>
-                                                        <span>East Tambaram ,chennai</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <label>Email:</label>
-                                                        <span>
-                                                            <a
-                                                                href="mailto:karthikr2022@gmail.com">karthikr2022@gmail.com</a>
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <label>Mobile No:</label>
-                                                        <span>+91 86673 45632</span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <label>Website:</label>
-                                                        <span>
-                                                            <a
-                                                                href="https:karthikraji2020.github.io">https:karthikraji2020github.io</a>
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="rightbox">
+                                    
                                         <div class="demo_tm_contact_wrap">
                                             <div class="main_input_wrap">
                                                 <form method="post" class="contact_form" id="contact_form">
@@ -518,13 +567,16 @@ data-aos-duration="2000">
                                                         <span>Please Fill Required Fields</span>
                                                     </div>
                                                     <div class="wrap">
-                                                        <input id="name" type="text" placeholder="Your Name">
+                                                        <label> <b> Enter Your Name</b></label>
+                                                        <input id="name" type="text" placeholder="Enter Your Name">
                                                     </div>
                                                     <div class="wrap">
-                                                        <input id="email" type="text" placeholder="Your Email">
+                                                        <label> <b> Enter Your Email</b></label>
+                                                        <input id="email" type="text" placeholder="Enter Your Email">
                                                     </div>
                                                     <div class="wrap">
-                                                        <textarea id="message" placeholder="Your Message"></textarea>
+                                                        <label> <b> Enter Your Message</b></label>
+                                                        <textarea id="message" placeholder="Enter Your Message"></textarea>
                                                     </div>
                                                     <div class="demo_tm_button">
                                                         <a id="send_message" href="#">
@@ -534,14 +586,10 @@ data-aos-duration="2000">
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                             </div>
-                            <div class="demo_tm_footer_wrap">
-                                <div class="container">
-                                    <p>&copy; Copyright 2019. All Rights are Reserved.</p>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -554,10 +602,44 @@ data-aos-duration="2000">
 
                     <!-- /CONTACT & FOOTER -->
                
+    <!-- footer -->
+    <footer class="py-1 page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 footer-child copyright">
+             KarthikRaji © <span class="footer-year"></span> All Rights Reserved
+            </div>
+            <div class="col-12 col-md-6 footer-child footer-links">
+              <div class="social">
+                <a href="https://www.linkedin.com/in/karthik-r-a70001194" title="linkedin" target="_blank">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/karthikraji2020" title="github" target="_blank">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://codepen.io/karthikraji2020" title="codepen" target="_blank">
+                  <i class="fa fa-codepen" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/karthik__raji" title="instagram" target="_blank">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
+         
+              <div>
+                <small>Made with <i class="fa fa-heart text-red"></i> by <a href="https://www.linkedin.com/in/karthik-r-a70001194" target="_blank">Karthik Raji</a>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+   
+    <!-- footer -->
 
             </div>
         </div>
     </div>
+
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -608,6 +690,33 @@ data-aos-duration="2000">
   <!-- scripts -->
   <script type="text/javascript" src="./js/particles.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
+
+  <script>
+      $(document).ready(function(){
+
+$(".filter-button").click(function(){
+    var value = $(this).attr('data-filter');
+    
+    if(value == "all")
+    {
+        //$('.filter').removeClass('hidden');
+        $('.filter').show('1000');
+    }
+    else
+    {
+        $(".filter").not('.'+value).hide('3000');
+        $('.filter').filter('.'+value).show('3000');
+        
+    }
+});
+
+if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+  </script>
 </body>
 
 </html>
