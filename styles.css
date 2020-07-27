@@ -9,14 +9,17 @@
     #mobilenavbar{
      display: none;
     }
-    .typewriter {
+    .typewriter,.profile_Image {
         font-family: Courier, monospace;
         position: absolute;
         top: 70%;
-        left: 70%;
-        transform: translate(-70%, -70%);
+        left: 50%;
+        transform: translate(-50%, -70%);
         background: rgba(0, 0, 0, 0.5);
         color: black;
+    }
+    .profile_Image{
+        border-radius:50%;
     }
     .about_short_contact_wrap ul li label{
         min-width: 55px;;
@@ -1786,3 +1789,5 @@ padding-bottom: 60px;
     }
 
     /* <!-- for loader --> */
+
+    

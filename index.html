@@ -37,10 +37,12 @@
     
     #particles-js{
         filter: grayscale(80%);
-    background: url('./images/homeBg.jpg');
-    background-size: cover;
+        background:#212121;
+        
+    /* background: url('./images/homeBg.jpg'); */
+   /* background-size: cover;
     background-position:center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     height: 100vh;
     /* filter: grayscale(50%); */
 width:100%;
@@ -138,9 +140,9 @@ footer {
     text-decoration: none;
     margin: 5px 2px;
     border-radius:50%;
-    border:3px solid #ccc;
+    border:3px solid #ccc;  
     /* box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(146, 145, 145); */
-    box-shadow: 1px 3px 3px #dddddd, inset 2px 6px 6px rgb(146, 145, 145);
+    box-shadow: 1px 3px 3px #222222,  2px 6px 6px rgb(41, 41, 41);
     background:rgb(78, 78, 78); 
     }
     .skills{
@@ -161,7 +163,7 @@ footer {
     cursor: pointer;
     transition:.7s;
     transform: scale(.91); 
-    box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(146, 145, 145);
+    box-shadow: 1px 9px 9px #231b1b, inset 2px 10px 10px rgb(61, 61, 61);
     }
     .skills .skillCol:hover {
     box-shadow: 1px 3px 3px #dddddd, inset 2px 6px 6px rgb(146, 145, 145);
@@ -228,14 +230,16 @@ footer {
                         <li class="nav-item">
                             <a class="nav-link" href="#About">ABOUT </a>
                         </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="#Skills">SKILLS </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#Projects">PROJECTS </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#Contact">CONTACT </a>
                         </li>
-
-                       
                     </ul>
                  
                 </nav>
@@ -275,19 +279,16 @@ footer {
                     </button>
                 </span>
               
-
-
                
                     <div id="Home" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="top-center">
 
                             <div id="particles-js">
-                    
+                                <img src="./images/about.jpg" class="profile_Image"> 
 
                         <div class="typewriter">
-
                             <div class="typewriter-text">
                                 I'M karthik,<br>
-                                <span> SoftWare Developer</span>
+                                <span> Frontend Developer</span>
                             </div>
                         </div> 
                         <div class="overlay"></div>
@@ -313,8 +314,8 @@ footer {
                                         </div>
                                         <div class="rightbox">
                                             <div class="definition">
-                                                <p>Hi! My name is
-                                                    <strong>Karthik Raji</strong>. I am a Software Developer, working in vs online services
+                                                <p>Hi! I'm
+                                                    <strong>Karthik Raji</strong>. I am a Frontend Developer, work At DXC Technology
                                                     I'm very
                                                     passionate and dedicated to my work.I have acquired the skills
                                                     and
@@ -409,138 +410,154 @@ data-aos-duration="2000">
             <h3>Skill</h3>
             <span>Main informations about me</span>
         </div>
+
+       
         <div class="row skills">
-        <div class="skillCol">
-            <i class="devicon-html5-plain-wordmark  colored "></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-css3-plain-wordmark  colored "></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-bootstrap-plain-wordmark  colored "></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-javascript-plain colored "></i>
-        </div>
+            <div class="skillCol" title="Html5">
+                <i class="devicon-html5-plain-wordmark  colored " ></i>
+            </div>
+            <div class="skillCol" title="Css3">
+                <i class="devicon-css3-plain-wordmark  colored "></i>
+            </div>
+            <div class="skillCol" title="Bootstrap">
+                <i class="devicon-bootstrap-plain-wordmark  colored "></i>
+            </div>
+            <div class="skillCol" title="Javascript">
+                <i class="devicon-javascript-plain colored "></i>
+            </div>
         </div>
         <div class="row skills">
-        <div class="skillCol">
-            <i class="devicon-angularjs-plain colored"></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-express-original colored"></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-nodejs-plain-wordmark  colored "></i>
-        </div>
-        <div class="skillCol">
-            <i class="devicon-git-plain-wordmark colored "></i>
+            <div class="skillCol" title="Angular7">
+                <i class="devicon-angularjs-plain colored"></i>
+            </div>
+            <div class="skillCol" title="Express">
+                <i class="devicon-express-original colored"></i>
+            </div>
+            <div class="skillCol" title="Nodejs">
+                <i class="devicon-nodejs-plain-wordmark  colored "></i>
+            </div>
+            <div class="skillCol" title="Git">
+                <i class="devicon-git-plain-wordmark colored "></i>
+            </div>
         </div>
     </div>
-    </div>
-</div>
+  </div>
 </div>
 <!-- /SKILLS -->
                </div>
             
                  <!-- PORTFOLIO -->
 
+         <div  id="Projects" >
+                <div class="container">
+                    <div class="row">
+                    <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="gallery-title">Projects</h1>
+                    </div>
+                    </div>
+
+                    <div align="center">
+                        <button class="btn btn-default filter-button" data-filter="all">All WebApps </button>
+                        <button class="btn btn-default filter-button" data-filter="javascript">Vennila javascript</button>
+                        <button class="btn btn-default filter-button" data-filter="angular">Angular</button>
+                        <button class="btn btn-default filter-button" data-filter="nodejs">Nodejs</button>
+                    </div>
+                    <br/>
+
+                    <!-- <div class="row skills"> -->
+                    <div class="row">
+                        <!-- <div class="media border p-3 m-3 shadow filter javascript">
+                            <img src="http://fakeimg.pl/300x300/" alt="John Doe" class="image-fluid mr-3" >
+                            <div class="media-body">
+                            <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+                        <div class="media border p-3 m-3 shadow filter angular">
+                            <img src="http://fakeimg.pl/300x300/" alt="John Doe" class="image-fluid mr-3" >
+                            <div class="media-body">
+                            <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div> -->
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter javascript">
+                            <img class="card-img-top" src="https://raw.githubusercontent.com/karthikraji2020/covid19/master/assets/images/covid19.gif" alt="covid19">
+                            <div class="card-body">
+                                <h4 class="card-title">Covid -19</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter angular">
+                            <img class="card-img-top" src="https://raw.githubusercontent.com/karthikraji2020/votepoll-MEAN/master/src/assets/images/votePoll.gif" alt="votePoll">
+                            <div class="card-body">
+                                <h4 class="card-title">Votingpoll</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter javascript">
+                            <img class="card-img-top" src="https://raw.githubusercontent.com/karthikraji2020/weather-app-js/master/assets/images/weatherForcast.gif" alt="weatherForcast">
+                            <div class="card-body">
+                                <h4 class="card-title">weather App</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
 
 
- <div class="container">
-    <div class="row">
-    <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h1 class="gallery-title">Projects</h1>
-    </div>
-    </div>
-
-    <div align="center">
-        <button class="btn btn-default filter-button" data-filter="all">All</button>
-        <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
-        <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
-        <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
-    </div>
-    <br/>
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter nodejs">
+                            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Shortly</h4>
+                                <p class="card-text">It's a URL Shortener.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
 
 
-    <div class="row">
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter nodejs">
+                            <img class="card-img-top" src="https://raw.githubusercontent.com/karthikraji2020/uigenaratorkit/master/public/images/uigenkit.gif" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Ui Generator Kit</h4>
+                                <p class="card-text">It's a Cloned App of Neumorphism,UI Gradients.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+
+
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter javascript">
+                            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Pixll Art</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+
+                        <!-- <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter nodejs">
+                            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div> -->
+
+                        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter angular">
+                            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">ui Quiz App</h4>
+                                <p class="card-text">Some example text.</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
 
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter sprinkle">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter hdpe">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter spray">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-
-        <div class="gallery_product card col-lg-4 col-md-4 col-sm-6 col-xs-6 filter sprinkle">
-            <img class="card-img-top" src="http://fakeimg.pl/300x300/" alt="Card image">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-    </div>
-</div>
                
                   <!-- /PORTFOLIO -->
                 <div id="Contact">
